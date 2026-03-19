@@ -1,0 +1,298 @@
+---
+title: "MetaInsight v7"
+subtitle: "Making a comprehensive app for network meta-analysis reproducible"
+author: "Simon Smart"
+format: 
+  revealjs:
+    logo: images/uol_logo.png
+    code-line-numbers: false
+    theme: [default, custom.scss]
+    width: 1600  
+    height: 900
+    scale: true
+    slide-number: true
+    embed-resources: true
+date: "20 April 2026"
+date-format: "Do MMMM YYYY"
+preload-iframes: false
+---
+
+## Overview
+
+- What is NMA?
+- History of MetaInsight
+- Demonstration of new features
+- How challenges were addressed
+
+## Network meta-analysis can help determine the 'best' treatment option
+
+```{css}
+h1.title {
+  background-image: url(images/mi_logo.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 400px;
+  padding: 60px 0;
+  color: #00000000;
+}
+```
+
+::: columns
+::: {.column width="50%"}
+<img src= "images/network_plot.png" height = 600 alt = "Network of six treatments where there are different numbers of trials that compared each pair">
+:::
+::: {.column width="50%"}
+<img src= "images/ranking_plot.png" height = 600 alt = "Line graph showing the output of an analysis where each treatment is ranked by outcome">
+:::
+:::
+
+::: footer
+Data from Elliot & Meyer (2007) <a href="https://doi.org/10.1016/s0140-6736(07)60108-1" target="_blank">10.1016/s0140-6736(07)60108-1</a>
+:::
+
+## Complex meta-analyses require extensive statistical and programming knowledge
+
+::: {.incremental .highlight-last}
+- BUGSnet, bnma, coda, gemtc, meta, metafor, netmeta
+- Some dependent on JAGS which may be hard to install
+- Require data in different formats and use different terminology
+:::
+
+
+## Examples of different terminology
+
+- netmeta requires data in a 'wide' format while gemtc requires it in a 'long' format
+- bnma uses `common` and `independent` when gemtc uses `shared` and `unrelated`
+- random effects and common effects
+
+
+## Shiny removes barriers for accessing cutting-edge methods
+
+::: columns
+::: {.column width="60%"}
+- MetaInsight was launched in 2019 to make NMA more accessible 
+- Originally developed by statisticians, but increasingly in collaboration with developers 
+:::
+::: {.column width="40%"}
+<img src = "images/citations.png" alt = "Line graph showing cumulative citations of Owen 2019 since 2020, now a total of 259">
+:::
+:::
+
+```{r echo = FALSE, eval = FALSE}
+png("images/citations.png", 600, 600)
+Year <- 2020:2025	
+Citations <- c(6, 17, 28, 57, 66, 88)
+`Cumulative citations` <- cumsum(Citations)
+
+par(cex = 1.5, bg = '#e4fbf8')
+plot(Year, `Cumulative citations`, type = "l", col = "darkblue", lwd = 4, ylab = "", main = "Cumulative citations")
+dev.off()
+```
+
+
+::: footer
+Owen *et al.* (2019) <a href="https://doi.org/10.1002/jrsm.1373" target="_blank">10.1002/jrsm.1373</a>; Bradbury *et al.* (2025) <a href="https://doi.org/10.1186/s12874-024-02450-9" target="_blank">10.1186/s12874-024-02450-9</a>; Scopus (2025-11-05)
+:::
+
+::: notes
+has users worldwide and increasing citations and use in CROs
+:::
+
+
+## A history of MetaInsight
+
+- 2017: Development begins as a Masters project 
+- 2018: App launched featuring frequentist methods
+- 2019: Bayesian analysis and 'long' data formats
+- 2020: Binary and continuous outcomes merged into a single app
+- 2021: Code moved to GitHub
+- 2023: Bayesian ranking panel added and code reorganised
+- 2024: Meta-regression added
+
+
+
+
+## 
+<div style="display: flex; justify-content: center; margin-top: -80px">
+  <img src="images/metainsight_existing.png" width = 1400 alt = "Screenshot of the existing app">
+</div>
+
+<div style="position: absolute; top: 50%; right: -125px; transform: translateY(-50%);">
+  <img src="images/metainsight_old_qr.png" height = 250px">
+</div>
+
+::: footer
+<a href="https://crsu.shinyapps.io/MetaInsight/" target="_blank">crsu.shinyapps.io/MetaInsight</a> 
+:::
+
+## The 'black box' nature of apps can limit uptake
+
+::: columns
+::: {.column width="70%"}
+:::{.incremental .highlight-last}
+- {shinyscholar} was forked from {wallace} to make development of reproducible apps easier
+- Convert core functionality into functions and package
+- App becomes an interface to the functions, dealing with interactivity
+:::
+:::
+::: {.column width="30%"}
+<img src="images/shinyscholar.png" width="auto" height="auto" align="right" alt="Hex logo of shinyscholar showing a black and white mortar cap">
+:::
+:::
+
+##
+
+<div style="display: flex; justify-content: center;">
+  <img src="images/metainsight_new.png" width = 1400 alt = "Screenshot of the updated app">
+</div>
+
+<div style="position: absolute; top: 50%; right: -125px; transform: translateY(-50%);">
+  <img src="images/metainsight_new_qr.png" height = 250px">
+</div>
+
+::: footer
+<a href="https://crsu.shinyapps.io/MetaInsight_Scholar/" target="_blank">crsu.shinyapps.io/MetaInsight_Scholar</a> 
+:::
+
+## Reproducibility relies on a strict structure
+::: {.incremental .highlight-last}
+- Each module has an id made up of the component and module `summary_network`
+- Each calls a synonymous function `summary_network()`
+- Input values are stored in `common$meta$summary_network$<input id>`
+- Values are knitted into an .Rmd chunk and combined to create a .qmd
+:::
+
+## Reproducibility relies on a strict structure {.mediumcode}
+
+::: {.fragment .fade-in}
+````markdown
+```{{asis, echo = {{summary_network_knit}}, eval = {{summary_network_knit}}, include = {{summary_network_knit}}}}
+### Display the networks for the original data and data with excluded studies.
+{r,  results = 'asis'}
+```
+```{{r, echo = {{summary_network_knit}}, include = {{summary_network_knit}}}}
+summary_network(configured_data,
+                {{summary_network_style}}, 
+                {{summary_network_label_all}}, 
+                "Network plot of all studies")
+```
+````
+:::
+
+<br/>
+
+::: {.fragment .fade-in}
+
+````markdown
+### Display the networks for the original data and data with excluded studies.
+
+```{{r, results = 'asis'}}
+summary_network(configured_data, 
+                "netplot", 
+                1, 
+                "Network plot of all studies")
+```
+````
+:::
+
+## Reproducibility also enables improved reporting
+::: columns
+::: {.column width="50%"}
+- Use as the basis for writing a publication
+- Rendered in the app to produce an html report
+:::
+::: {.column style="margin-top: -80px;"}
+<img src = "images/report.png" height = 700px alt = "Screenshot of the an html report produced by the app">
+:::
+:::
+
+## Incorporating risk of bias scores improves sensitivity analyses
+::: {.incremental .highlight-last}
+- MetaInsight enables sensitivity analyses by excluding studies
+- During reviews, risk of bias information can be collected e.g.
+  - Randomisation, blinding, missing data
+- Scores can guide sensitivity analyses
+:::
+
+## Integration with CINeMA helps to evaluate confidence in findings
+
+::: columns
+::: {.column width="50%"}
+<img src = "images/cinema_logo.svg" alt = "Cinema logo">
+
+- Uses risk of bias scores for *studies* to evaluate evidence for *treatments*
+
+:::
+::: {.column width="50%"}
+<img src = "images/diabetes_netplot.png" height = 500 style="margin-left: 120px;" alt = "Network plot as in the first slide but with the nodes between each treatment pair coloured according to the risk of bias">
+:::
+:::
+
+::: footer
+<a href="https://cinema.ispm.unibe.ch/" target="_blank">cinema.ispm.unibe.ch</a> ;
+Papakonstantinou *et al.* (2020) <a href="https://doi.org/10.1002/cl2.1080" target="_blank">10.1002/cl2.1080</a> 
+:::
+
+## Benefits of CRAN
+
+- Simple to install and run locally
+- Can use various tools for checking code 
+- We will learn in advance if developers of the analytical packages make breaking changes 
+
+
+## Excluding studies
+
+
+## Dealing with different data
+
+- Uploaded datasets can vary in the number of studies and treatments
+
+
+## Limitations of button pressing
+
+- In the current version, the analyses run automatically once data is loaded
+- For reproducibility, we need explicit decisions on what is run
+- Modules all have a button to press, either with the mouse or Enter
+- Once pressed, they update automatically
+- Within the sections, a run all option runs all of them
+- If they can't yet be run, an error message takes you to the relevant module
+- 
+
+## Reactivity is a blessing and a curse
+
+- Reactivity controls when code is rerun
+- As complexity grows, it can be difficult to control and code can rerun unnecessarily
+
+
+## Conducting analyses without the app
+
+- A side product of enabling reproducibility is that the analysis functions work outside of the app
+- Some users may be comfortable with coding, but the NMA packages are not straightforward to use
+
+## Saving and loading
+
+
+## User feedback
+
+
+
+
+## Acknowledgments {.mediumtext}
+
+::: columns
+::: {.column width="70%"}
+- Naomi Bradbury, Ryan Field, Tom Morris, Clareece Nevill, Janion Nevill, Alex Sutton, Nicola Cooper, Suzanne Freeman
+- Wellcome (via Chan Zuckerburg Initiative)
+- NIHR
+- <a href="mailto:ss1545@le.ac.uk">Email</a>, <a href="https://github.com/simon-smart88" target="_blank">Github</a>, <a href="https://bsky.app/profile/simonsmart.bsky.social" target="_blank">Bluesky</a>
+- <a href="https://www.gla.ac.uk/research/az/crsu/apps/" target="_blank">More apps</a>
+:::
+::: {.column width="30%"}
+<div> 
+<img src="images/CRSU_logo.png" width="400" style = "display: block;" alt = "CRSU logo">
+<img src="images/wellcome_logo.png" width="300" class=centre_image alt = "Wellcome logo">
+<img src="images/nihr_logo.png" width="700" style="display: block; position: absolute; right: 0;" alt = "NIHR logo">
+</div>
+:::
+:::
+
