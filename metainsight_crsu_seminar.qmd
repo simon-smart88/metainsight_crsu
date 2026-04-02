@@ -19,13 +19,6 @@ preload-iframes: false
 
 ## Overview
 
-- What is NMA?
-- History of MetaInsight
-- Demonstration of new features
-- How challenges were addressed
-
-## Network meta-analysis can help determine the 'best' treatment option
-
 ```{css}
 h1.title {
   background-image: url(images/mi_logo.png);
@@ -36,6 +29,13 @@ h1.title {
   color: #00000000;
 }
 ```
+
+- What is NMA?
+- History of MetaInsight
+- Demonstration of new features
+- How challenges were addressed
+
+## Network meta-analysis can help determine the 'best' treatment option
 
 ::: columns
 ::: {.column width="50%"}
@@ -54,16 +54,65 @@ Data from Elliot & Meyer (2007) <a href="https://doi.org/10.1016/s0140-6736(07)6
 
 ::: {.incremental .highlight-last}
 - BUGSnet, bnma, coda, gemtc, meta, metafor, netmeta
-- Some dependent on JAGS which may be hard to install
+- Bayesian models dependent on JAGS which may be hard to install
 - Require data in different formats and use different terminology
 :::
 
-
 ## Examples of different terminology
-
+::: {.incremental .highlight-last}
 - netmeta requires data in a 'wide' format while gemtc requires it in a 'long' format
+- netmeta uses `random` and `common` while gemtc uses `random` and `fixed`
 - bnma uses `common` and `independent` when gemtc uses `shared` and `unrelated`
-- random effects and common effects
+:::
+
+
+## Frequentist
+
+
+## Bayesian
+
+
+## Sensitivity analyses
+
+- A key feature of MetaInsight is enabling sensitivity analyses by allowing studies to be excluded 
+
+
+## Baseline risk meta-regression
+
+- How does an approximation of the baseline health of participants in the studies affect conclusions?
+- Determined by comparing the control arms of the studies
+
+
+## Covariate meta-regression
+
+- Do any covariates affect the response to a treatment?
+- For example, does the age of participants affect the outcome?
+
+
+
+## Shiny apps enable anybody to access the power of R {.mediumcode}
+
+::: columns
+::: {.column width="75%"}
+<br/>
+```{r eval = FALSE, echo = TRUE}
+ui <- fluidPage(
+  numericInput("number", "Enter a number", value = 5),
+  textOutput("answer")
+)
+
+server <- function(input, output) {
+  output$answer <- renderText(input$number * 10)
+}
+
+shinyApp(ui, server)
+```
+:::
+::: {.column width="25%"}
+<br/>
+<img src="images/basic_app.png" alt="A screenshot of a basic shiny app displaying an input box to enter a number in and an output displaying the inputted number multiplied by ten.">
+:::
+:::
 
 
 ## Shiny removes barriers for accessing cutting-edge methods
@@ -80,8 +129,8 @@ Data from Elliot & Meyer (2007) <a href="https://doi.org/10.1016/s0140-6736(07)6
 
 ```{r echo = FALSE, eval = FALSE}
 png("images/citations.png", 600, 600)
-Year <- 2020:2025	
-Citations <- c(6, 17, 28, 57, 66, 88)
+Year <- 2020:2026 
+Citations <- c(6, 17, 28, 57, 66, 97, 29)
 `Cumulative citations` <- cumsum(Citations)
 
 par(cex = 1.5, bg = '#e4fbf8')
@@ -91,7 +140,7 @@ dev.off()
 
 
 ::: footer
-Owen *et al.* (2019) <a href="https://doi.org/10.1002/jrsm.1373" target="_blank">10.1002/jrsm.1373</a>; Bradbury *et al.* (2025) <a href="https://doi.org/10.1186/s12874-024-02450-9" target="_blank">10.1186/s12874-024-02450-9</a>; Scopus (2025-11-05)
+Owen *et al.* (2019) <a href="https://doi.org/10.1002/jrsm.1373" target="_blank">10.1002/jrsm.1373</a>; Scopus (2026-03-27)
 :::
 
 ::: notes
@@ -99,33 +148,91 @@ has users worldwide and increasing citations and use in CROs
 :::
 
 
-## A history of MetaInsight
+## A history of MetaInsight 
 
-- 2017: Development begins as a Masters project 
+- 2017: Development begins as a 3 month PhD placement
 - 2018: App launched featuring frequentist methods
-- 2019: Bayesian analysis and 'long' data formats
+- 2019: Bayesian analysis and 'long' data formats added
 - 2020: Binary and continuous outcomes merged into a single app
 - 2021: Code moved to GitHub
 - 2023: Bayesian ranking panel added and code reorganised
 - 2024: Meta-regression added
 
+::: footer
+Bradbury *et al.* (2025) <a href="https://doi.org/10.1186/s12874-024-02450-9" target="_blank">10.1186/s12874-024-02450-9</a>
+:::
 
+
+## MetaInsight has a global userbase
+
+```{r}
+library(ggplot2)
+library(sf)
+library(rnaturalearth)
+library(rnaturalearthdata)
+library(dplyr)
+
+data <- read.csv("analytics.csv")
+world <- ne_countries(scale = "medium", returnclass = "sf")
+
+map_data <- world %>%
+  left_join(data, by = c("name" = "country"))
+
+ggplot(data = map_data) +
+  geom_sf(aes(fill = count), color = "white", size = 0.2) +
+  scale_fill_gradient(
+    name = "Users",
+    low = "#005c8a",
+    high = "#e4042c",
+    na.value = "grey90"
+  ) +
+  labs(
+    title = "Users by country in 2025",
+    caption = "Source: Google Analytics"
+  ) +
+  theme_void() +
+  theme(
+    legend.position = "right",
+    plot.title = element_text(size = 16, face = "bold"),
+    plot.subtitle = element_text(size = 12, color = "gray50"),
+    panel.grid = element_blank()
+  )
+```
 
 
 ## 
+
 <div style="display: flex; justify-content: center; margin-top: -80px">
   <img src="images/metainsight_existing.png" width = 1400 alt = "Screenshot of the existing app">
 </div>
 
-<div style="position: absolute; top: 50%; right: -125px; transform: translateY(-50%);">
-  <img src="images/metainsight_old_qr.png" height = 250px">
-</div>
+::: notes
 
-::: footer
-<a href="https://crsu.shinyapps.io/MetaInsight/" target="_blank">crsu.shinyapps.io/MetaInsight</a> 
+- some options always visible when not
+- small graphs
+- download everything as a png would take many clicks
+
 :::
 
 ## The 'black box' nature of apps can limit uptake
+
+::: columns
+::: {.column width="50%"}
+- Open science principles require that code can be rerun
+- NICE require that NMAs are reproducible
+:::
+
+::: {.column width="50%"}
+<img src="images/nice_reproducibility.png" width="auto" height="auto" align="right" alt="Screenshot of NICE report showing WinBUGS code">
+:::
+:::
+
+::: footer
+<a href="https://www.nice.org.uk/guidance/ng238" target="_blank">nice.org.uk/guidance/ng238</a> 
+:::
+
+
+## shinyscholar was developed to address this
 
 ::: columns
 ::: {.column width="70%"}
@@ -146,13 +253,34 @@ has users worldwide and increasing citations and use in CROs
   <img src="images/metainsight_new.png" width = 1400 alt = "Screenshot of the updated app">
 </div>
 
-<div style="position: absolute; top: 50%; right: -125px; transform: translateY(-50%);">
-  <img src="images/metainsight_new_qr.png" height = 250px">
-</div>
-
 ::: footer
 <a href="https://crsu.shinyapps.io/MetaInsight_Scholar/" target="_blank">crsu.shinyapps.io/MetaInsight_Scholar</a> 
 :::
+
+
+## Aims
+:::{.incremental .highlight-last}
+- Make analyses conducted in MetaInsight reproducible
+- Produce a downloadable report
+- Improve quality and consistency of downloaded plots
+- Add more automated tests
+- Maintain user experience
+:::
+
+## Different architecture to shinyscholar
+
+- Parallel analyses rather than linear
+- Needed to maintain the functionality of excluding studies at any point
+
+## Functions do things, modules control when to call functions
+
+- Critical to the architecture is splitting up the analysis (what) from the app (when)
+
+
+## 
+
+* Setup - che
+
 
 ## Reproducibility relies on a strict structure
 ::: {.incremental .highlight-last}
@@ -239,14 +367,46 @@ Papakonstantinou *et al.* (2020) <a href="https://doi.org/10.1002/cl2.1080" targ
 - Can use various tools for checking code 
 - We will learn in advance if developers of the analytical packages make breaking changes 
 
+## Uploaded datasets can create difficulties
+
+- Contain errors which could crash the app
+- Vary in the number of studies and treatments
 
 ## Excluding studies
 
+- Previously studies were listed in the sidebar
+- Information was provided in a table
 
-## Dealing with different data
+<img src = "images/exclusions_old.png" >
 
-- Uploaded datasets can vary in the number of studies and treatments
 
+## Slow-running tasks run in the background
+
+- Fitting models can block the app for other users
+- Can cancel
+
+
+## Producing publication-ready figures
+
+- Ideally plots can be downloaded and used without further editing
+- We reuse plots from other packages
+
+https://simon-smart88.github.io/forest_plot_blog/forest_blog.html 
+
+
+## Tests
+
+- As complexity increases, updating code can have unintended consequences
+- Automated tests can give us confidence that everything is working
+- Already a lot of testing in place
+- Now the app is also run and all the buttons pressed on GitHub
+
+
+
+## Data names
+
+- `main` or no suffix
+- `_sub`, `_exclude` and `_sensitivity`
 
 ## Limitations of button pressing
 
@@ -264,16 +424,59 @@ Papakonstantinou *et al.* (2020) <a href="https://doi.org/10.1002/cl2.1080" targ
 - As complexity grows, it can be difficult to control and code can rerun unnecessarily
 
 
-## Conducting analyses without the app
+## Running locally
+
+```{r eval = FALSE}
+library(metainsight)
+run_metainsight()
+
+run_metainsight(load_file = "saved_file.rds")
+```
+
+
+## Analyses can also be conducted without the app
 
 - A side product of enabling reproducibility is that the analysis functions work outside of the app
 - Some users may be comfortable with coding, but the NMA packages are not straightforward to use
 
+```{r eval = FALSE, echo = TRUE}
+configured_data <- setup_load("my_data.csv", outcome = "continuous") |>
+  setup_configure(reference_treatment = "Placebo",
+                  effects = "random",
+                  outcome_measure = "MD",
+                  ranking_option = "good",
+                  seed = 123)
+```
+
+## Analyses can also be conducted without the app
+
+```{r eval = FALSE, echo = TRUE}
+freq_forest(configured_data) |> 
+  write_plot("frequentist_forest_plot.pdf")
+
+bayes_model(configured_data) |> 
+  bayes_forest() |>
+  write_plot("bayesian_forest_plot.pdf")
+```
+
+
 ## Saving and loading
+
+- Analyses can also be saved to a file and restored later on
+
 
 
 ## User feedback
 
+![images/feature_request.png]()
+
+
+## Future plans
+
+- Incorporate guidance 
+- Bulk downloads
+- More options for customisation - models and plots
+- More options for exclusions
 
 
 

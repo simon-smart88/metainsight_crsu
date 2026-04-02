@@ -1,0 +1,15 @@
+---
+title: "map"
+output: html_document
+---
+
+```{r}
+library(metainsight)
+con <- setup_load("~/Documents/metainsight_dev/summary_study/Very large.csv", o = "continuous") |>
+  setup_configure("Placebo", "random", "MD", "good", 123)
+
+png("forest.png", width = 600, height = 400)
+meta::forest(con$freq$netmeta, reference.group = "Placebo", pooled = "random")
+dev.off()
+```
+
