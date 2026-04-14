@@ -69,12 +69,13 @@ Data from Elliot & Meyer (2007) <a href="https://doi.org/10.1016/s0140-6736(07)6
 ## Frequentist
 
 
+
 ## Bayesian
 
 
 ## Sensitivity analyses
 
-- A key feature of MetaInsight is enabling sensitivity analyses by allowing studies to be excluded 
+- Studies can be excluded from analyses to examine their influence on the result
 
 
 ## Baseline risk meta-regression
@@ -148,7 +149,8 @@ has users worldwide and increasing citations and use in CROs
 :::
 
 
-## A history of MetaInsight 
+
+## A history of MetaInsight {.mediumtext}
 
 - 2017: Development begins as a 3 month PhD placement
 - 2018: App launched featuring frequentist methods
@@ -208,11 +210,24 @@ ggplot(data = map_data) +
 
 ::: notes
 
-- some options always visible when not
+- some options always visible when not needed
 - small graphs
 - download everything as a png would take many clicks
 
 :::
+
+
+## 
+
+<div style="display: flex; justify-content: center; margin-top: -80px">
+  <img src="images/metainsight_existing_options.png" width = 1400 alt = "Screenshot of the existing app">
+</div>
+
+## 
+
+<div style="display: flex; justify-content: center; margin-top: -80px">
+  <img src="images/metainsight_existing_exclusions.png" width = 1400 alt = "Screenshot of the existing app">
+</div>
 
 ## The 'black box' nature of apps can limit uptake
 
@@ -260,7 +275,8 @@ ggplot(data = map_data) +
 
 ## Aims
 :::{.incremental .highlight-last}
-- Make analyses conducted in MetaInsight reproducible
+- Make analyses reproducible
+- Upload risk of bias and integrate with CiNeMA
 - Produce a downloadable report
 - Improve quality and consistency of downloaded plots
 - Add more automated tests
@@ -269,8 +285,9 @@ ggplot(data = map_data) +
 
 ## Different architecture to shinyscholar
 
-- Parallel analyses rather than linear
+- Multiple parallel analyses rather than a single linear analysis
 - Needed to maintain the functionality of excluding studies at any point
+- Opportunites to reuse code within and between modules 
 
 ## Functions do things, modules control when to call functions
 
@@ -279,7 +296,10 @@ ggplot(data = map_data) +
 
 ## 
 
-* Setup - che
+- Setup: equivalent to 'Load Data' tab
+    - `setup_load`: checks that data is valid
+    - `setup_configure`: choose fixed options 
+    - `setup_exclude`: rerun with studies excluded
 
 
 ## Reproducibility relies on a strict structure
@@ -334,13 +354,30 @@ summary_network(configured_data,
 :::
 :::
 
+## Reproducibility also enables improved reporting
+
+- Show quarto version
+
+
+## Reproducibility also enables improved reporting
+
+<iframe width="1000" height="700" src="report.html"></iframe>
+
+
 ## Incorporating risk of bias scores improves sensitivity analyses
 ::: {.incremental .highlight-last}
-- MetaInsight enables sensitivity analyses by excluding studies
 - During reviews, risk of bias information can be collected e.g.
   - Randomisation, blinding, missing data
 - Scores can guide sensitivity analyses
 :::
+
+
+## Risk of bias forest plot
+
+- RoB can now be uploaded as part of the dataset
+- Name columns as `rob.<name>` 
+- New plot summarises study results and RoB data
+
 
 ## Integration with CINeMA helps to evaluate confidence in findings
 
@@ -361,52 +398,94 @@ summary_network(configured_data,
 Papakonstantinou *et al.* (2020) <a href="https://doi.org/10.1002/cl2.1080" target="_blank">10.1002/cl2.1080</a> 
 :::
 
-## Benefits of CRAN
-
-- Simple to install and run locally
-- Can use various tools for checking code 
-- We will learn in advance if developers of the analytical packages make breaking changes 
-
 ## Uploaded datasets can create difficulties
 
 - Contain errors which could crash the app
 - Vary in the number of studies and treatments
+
+<show network from existing version>
+
 
 ## Excluding studies
 
 - Previously studies were listed in the sidebar
 - Information was provided in a table
 
-<img src = "images/exclusions_old.png" >
+<img src = "images/metainsight_existing_exclusions.png" height = 700px alt = "Screenshot showing existing interface for excluding studies from an analysis">
+
+## Excluding studies
+
+- The table has been replaced with the summary forest plot but which is interactive
+- Clicking on a row excludes or includes the study
+- DEMO
 
 
 ## Slow-running tasks run in the background
 
 - Fitting models can block the app for other users
-- Can cancel
-
+- Spinner appears whilst waiting
+- Can be cancelled
+- Uses `shiny::ExtendedTask` and `{mirai}`
 
 ## Producing publication-ready figures
 
-- Ideally plots can be downloaded and used without further editing
-- We reuse plots from other packages
+- Ideally plots can be downloaded and used without editing
+- Reuse plots from other packages
+- Mixture of base plots and ggplot2 
+
+## 
+
+<div style="display: flex; justify-content: center; margin-top: -80px">
+  <img src="images/metainsight_existing_plot_size.png" width = 1400 alt = "Screenshot of the existing app">
+</div>
+
+## 
+
+<div style="display: flex; justify-content: center; margin-top: -80px">
+  <img src="images/metainsight_existing_limits.png" width = 1400 alt = "Screenshot of the existing app">
+</div>
+
+
+##
+
+- Add screenshot showing cut off plots
+
+
+## Plot downloads
+
+<img src="images/old_forest.png" alt = "Forest plot downloaded from existing app showing wide white borders and low resolution">
+
+
+## 
+
+- Dimensions need to be adjusted depending on dataset
+- Space available to display depends on screensize
+- Information in plot margins takes up a fixed number of pixels
+
+
+## 
+
+- Plots generated as SVGs by functions 
+- In app they squash and stretch freely
+- Can all be rendered to png, pdf or saved as svg
+- Enables testing of reproducibility
+
+
 
 https://simon-smart88.github.io/forest_plot_blog/forest_blog.html 
 
-
-## Tests
+## Automated tests give us confidence that everything is working
 
 - As complexity increases, updating code can have unintended consequences
-- Automated tests can give us confidence that everything is working
 - Already a lot of testing in place
 - Now the app is also run and all the buttons pressed on GitHub
-
-
 
 ## Data names
 
 - `main` or no suffix
 - `_sub`, `_exclude` and `_sensitivity`
+
+
 
 ## Limitations of button pressing
 
@@ -416,17 +495,22 @@ https://simon-smart88.github.io/forest_plot_blog/forest_blog.html
 - Once pressed, they update automatically
 - Within the sections, a run all option runs all of them
 - If they can't yet be run, an error message takes you to the relevant module
-- 
 
 ## Reactivity is a blessing and a curse
 
 - Reactivity controls when code is rerun
 - As complexity grows, it can be difficult to control and code can rerun unnecessarily
 
+## Saving and loading
+
+- Analyses can also be saved to a file and restored later on
+- Share with colleagues 
+- Access the data / models for further analysis
 
 ## Running locally
 
 ```{r eval = FALSE}
+install.packages("metainsight")
 library(metainsight)
 run_metainsight()
 
@@ -460,10 +544,11 @@ bayes_model(configured_data) |>
 ```
 
 
-## Saving and loading
+## Benefits of CRAN
 
-- Analyses can also be saved to a file and restored later on
-
+- Simpler to install and run locally
+- Can use various tools for checking code 
+- We will learn in advance if developers of the analytical packages make breaking changes 
 
 
 ## User feedback
