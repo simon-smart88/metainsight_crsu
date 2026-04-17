@@ -17,7 +17,7 @@ date-format: "Do MMMM YYYY"
 preload-iframes: false
 ---
 
-## Overview
+## Overview of the seminar
 
 ```{css}
 h1.title {
@@ -30,21 +30,18 @@ h1.title {
 }
 ```
 
-- What is NMA?
+- What is network meta-analysis?
 - History of MetaInsight
 - Demonstration of new features
 - How challenges were addressed
 
+## About me
+
+
+
 ## Network meta-analysis can help determine the 'best' treatment option
 
-::: columns
-::: {.column width="50%"}
-<img src= "images/network_plot.png" height = 600 alt = "Network of six treatments where there are different numbers of trials that compared each pair">
-:::
-::: {.column width="50%"}
-<img src= "images/ranking_plot.png" height = 600 alt = "Line graph showing the output of an analysis where each treatment is ranked by outcome">
-:::
-:::
+<img src= "images/network_plot.png" height = 600 alt = "Network of six treatments where there are different numbers of trials that compared each pair" class = centre_image>
 
 ::: footer
 Data from Elliot & Meyer (2007) <a href="https://doi.org/10.1016/s0140-6736(07)60108-1" target="_blank">10.1016/s0140-6736(07)60108-1</a>
@@ -54,7 +51,7 @@ Data from Elliot & Meyer (2007) <a href="https://doi.org/10.1016/s0140-6736(07)6
 
 ::: {.incremental .highlight-last}
 - BUGSnet, bnma, coda, gemtc, meta, metafor, netmeta
-- Bayesian models dependent on JAGS which may be hard to install
+- JAGS may be hard to install
 - Require data in different formats and use different terminology
 :::
 
@@ -66,29 +63,45 @@ Data from Elliot & Meyer (2007) <a href="https://doi.org/10.1016/s0140-6736(07)6
 :::
 
 
-## Frequentist
+## MetaInsight provides frequentist and Bayesian methods
 
+<summary plot>
 
+## MetaInsight provides frequentist and Bayesian methods
 
-## Bayesian
+<img src= "images/ranking_plot.png" height = 600 alt = "Line graph showing the output of an analysis where each treatment is ranked by outcome" class = centre_image>
 
+::: footer
+Data from Elliot & Meyer (2007) <a href="https://doi.org/10.1016/s0140-6736(07)60108-1" target="_blank">10.1016/s0140-6736(07)60108-1</a>
+:::
 
-## Sensitivity analyses
+## Sensitivity analyses can be run in parallel to the main analysis
 
-- Studies can be excluded from analyses to examine their influence on the result
+- Studies can be excluded from analyses to examine their influence on the results
 
+::: columns
+::: {.column width="50%"}
+
+:::
+::: {.column width="50%"}
+
+:::
+::: 
 
 ## Baseline risk meta-regression
 
 - How does an approximation of the baseline health of participants in the studies affect conclusions?
-- Determined by comparing the control arms of the studies
+- Compare reference treatment arms
 
+
+<regression plot>
 
 ## Covariate meta-regression
 
 - Do any covariates affect the response to a treatment?
 - For example, does the age of participants affect the outcome?
 
+<ranking plots>
 
 
 ## Shiny apps enable anybody to access the power of R {.mediumcode}
@@ -120,7 +133,7 @@ shinyApp(ui, server)
 
 ::: columns
 ::: {.column width="60%"}
-- MetaInsight was launched in 2019 to make NMA more accessible 
+- MetaInsight was developed to make NMA more accessible 
 - Originally developed by statisticians, but increasingly in collaboration with developers 
 :::
 ::: {.column width="40%"}
@@ -151,7 +164,7 @@ has users worldwide and increasing citations and use in CROs
 
 
 ## A history of MetaInsight {.mediumtext}
-
+::: {.incremental .highlight-last}
 - 2017: Development begins as a 3 month PhD placement
 - 2018: App launched featuring frequentist methods
 - 2019: Bayesian analysis and 'long' data formats added
@@ -159,6 +172,7 @@ has users worldwide and increasing citations and use in CROs
 - 2021: Code moved to GitHub
 - 2023: Bayesian ranking panel added and code reorganised
 - 2024: Meta-regression added
+:::
 
 ::: footer
 Bradbury *et al.* (2025) <a href="https://doi.org/10.1186/s12874-024-02450-9" target="_blank">10.1186/s12874-024-02450-9</a>
@@ -189,7 +203,6 @@ ggplot(data = map_data) +
     na.value = "grey90"
   ) +
   labs(
-    title = "Users by country in 2025",
     caption = "Source: Google Analytics"
   ) +
   theme_void() +
@@ -226,7 +239,7 @@ ggplot(data = map_data) +
 ## 
 
 <div style="display: flex; justify-content: center; margin-top: -80px">
-  <img src="images/metainsight_existing_exclusions.png" width = 1400 alt = "Screenshot of the existing app">
+  <img src="images/metainsight_existing_menus.png" width = 1400 alt = "Screenshot of the existing app">
 </div>
 
 ## The 'black box' nature of apps can limit uptake
@@ -253,8 +266,7 @@ ggplot(data = map_data) +
 ::: {.column width="70%"}
 :::{.incremental .highlight-last}
 - {shinyscholar} was forked from {wallace} to make development of reproducible apps easier
-- Convert core functionality into functions and package
-- App becomes an interface to the functions, dealing with interactivity
+
 :::
 :::
 ::: {.column width="30%"}
@@ -262,7 +274,14 @@ ggplot(data = map_data) +
 :::
 :::
 
+## shinyscholar was developed to address this
+
+<img src="images/shinyscholar_demo.png" width = 1400 alt = "Screenshot of the updated app">
+
+
 ##
+
+- Move somewhere else
 
 <div style="display: flex; justify-content: center;">
   <img src="images/metainsight_new.png" width = 1400 alt = "Screenshot of the updated app">
@@ -273,7 +292,7 @@ ggplot(data = map_data) +
 :::
 
 
-## Aims
+## Aims for version 7
 :::{.incremental .highlight-last}
 - Make analyses reproducible
 - Upload risk of bias and integrate with CiNeMA
@@ -289,10 +308,12 @@ ggplot(data = map_data) +
 - Needed to maintain the functionality of excluding studies at any point
 - Opportunites to reuse code within and between modules 
 
-## Functions do things, modules control when to call functions
+## Functions manipulate data, modules control when functions are called and what data is used
 
-- Critical to the architecture is splitting up the analysis (what) from the app (when)
-
+- Convert core functionality into functions and package
+- App becomes an interface to the functions, dealing with interactivity
+- Separates the what from when
+- Functions are easier to test 
 
 ## 
 
@@ -300,6 +321,12 @@ ggplot(data = map_data) +
     - `setup_load`: checks that data is valid
     - `setup_configure`: choose fixed options 
     - `setup_exclude`: rerun with studies excluded
+
+## 
+
+- Summary and Frequentist use the configured data directly
+- Bayesian and Meta-regression tabs have a model function
+- Results are then used to generate outputs
 
 
 ## Reproducibility relies on a strict structure
@@ -361,7 +388,7 @@ summary_network(configured_data,
 
 ## Reproducibility also enables improved reporting
 
-<iframe width="1000" height="700" src="report.html"></iframe>
+<iframe width="1400" height="600" src="report.html"></iframe>
 
 
 ## Incorporating risk of bias scores improves sensitivity analyses
@@ -375,8 +402,12 @@ summary_network(configured_data,
 ## Risk of bias forest plot
 
 - RoB can now be uploaded as part of the dataset
-- Name columns as `rob.<name>` 
+- Name columns as `rob.<name>` or `rob` and `indirectness`
 - New plot summarises study results and RoB data
+
+## Risk of bias forest plot
+
+<img src = "images/summary_study.png" alt = "Cinema logo">
 
 
 ## Integration with CINeMA helps to evaluate confidence in findings
@@ -430,8 +461,8 @@ Papakonstantinou *et al.* (2020) <a href="https://doi.org/10.1002/cl2.1080" targ
 ## Producing publication-ready figures
 
 - Ideally plots can be downloaded and used without editing
-- Reuse plots from other packages
-- Mixture of base plots and ggplot2 
+- Reuse plots from other packages, others custom-built
+- Mixture of base plots, {grid} and {ggplot2}
 
 ## 
 
@@ -451,7 +482,7 @@ Papakonstantinou *et al.* (2020) <a href="https://doi.org/10.1002/cl2.1080" targ
 - Add screenshot showing cut off plots
 
 
-## Plot downloads
+## Some downloaded plots had wide margins and low resolution
 
 <img src="images/old_forest.png" alt = "Forest plot downloaded from existing app showing wide white borders and low resolution">
 
@@ -463,14 +494,13 @@ Papakonstantinou *et al.* (2020) <a href="https://doi.org/10.1002/cl2.1080" targ
 - Information in plot margins takes up a fixed number of pixels
 
 
-## 
+## Plots are now all produced using a consistent workflow
 
-- Plots generated as SVGs by functions 
+- Functions generate SVGs 
 - In app they squash and stretch freely
+- Enables fullscreen viewing
 - Can all be rendered to png, pdf or saved as svg
 - Enables testing of reproducibility
-
-
 
 https://simon-smart88.github.io/forest_plot_blog/forest_blog.html 
 
@@ -480,12 +510,37 @@ https://simon-smart88.github.io/forest_plot_blog/forest_blog.html
 - Already a lot of testing in place
 - Now the app is also run and all the buttons pressed on GitHub
 
-## Data names
+## Unit tests check that functions perform as expected {.largecode}
 
-- `main` or no suffix
-- `_sub`, `_exclude` and `_sensitivity`
+```{r eval = FALSE, echo = TRUE}
+result <- setup_exclude(configured_data_con, c("Leo"))
+expect_false("Leo" %in% result$connected_data$Study)
+```
 
+## End-to-end tests that the app functions {.largecode}
+```{r eval = FALSE, echo = TRUE}
+app <- shinytest2::AppDriver$new(system.file("shiny", package = "metainsight"))
+...
+click_setup_exclude(app, "Leo")
+exclusions <- app$get_value(input = "setup_exclude-exclusions")
+expect_equal(exclusions, c("Leo"))
+```
 
+## Datasets had inconsistent names 
+
+- Main analysis: `main` or no suffix
+- Sensitivity analysis: `_sub`, `_exclude` and `_sensitivity`
+
+## Consistency
+
+- Main: `_all`
+- Sensitivity: `_sub`
+
+## Reactivity is a blessing and a curse
+
+- Reactivity controls when code is rerun
+- As complexity grows, it can be difficult to control and code can rerun unnecessarily
+- Previously Bayesian models had to be rerun when manually when settings changed
 
 ## Limitations of button pressing
 
@@ -496,18 +551,20 @@ https://simon-smart88.github.io/forest_plot_blog/forest_blog.html
 - Within the sections, a run all option runs all of them
 - If they can't yet be run, an error message takes you to the relevant module
 
-## Reactivity is a blessing and a curse
+## Analyses can also be saved to a file
 
-- Reactivity controls when code is rerun
-- As complexity grows, it can be difficult to control and code can rerun unnecessarily
-
-## Saving and loading
-
-- Analyses can also be saved to a file and restored later on
+- Can be restored later on
 - Share with colleagues 
 - Access the data / models for further analysis
+- Potential to spin up exact version of app in the future
 
-## Running locally
+## The package will soon be available on CRAN
+
+- Simpler to install and run locally
+- Can use various tools for checking code 
+- We will learn in advance if developers of the analytical packages make breaking changes 
+
+## The app can also be run locally {.largecode}
 
 ```{r eval = FALSE}
 install.packages("metainsight")
@@ -518,10 +575,7 @@ run_metainsight(load_file = "saved_file.rds")
 ```
 
 
-## Analyses can also be conducted without the app
-
-- A side product of enabling reproducibility is that the analysis functions work outside of the app
-- Some users may be comfortable with coding, but the NMA packages are not straightforward to use
+## Analyses can also be conducted without the app {.largecode}
 
 ```{r eval = FALSE, echo = TRUE}
 configured_data <- setup_load("my_data.csv", outcome = "continuous") |>
@@ -532,7 +586,12 @@ configured_data <- setup_load("my_data.csv", outcome = "continuous") |>
                   seed = 123)
 ```
 
-## Analyses can also be conducted without the app
+::: notes
+- A side product of enabling reproducibility is that the analysis functions work outside of the app
+- Some users may be comfortable with coding, but the NMA packages are not straightforward to use
+:::
+
+## Analyses can also be conducted without the app {.largecode}
 
 ```{r eval = FALSE, echo = TRUE}
 freq_forest(configured_data) |> 
@@ -543,18 +602,12 @@ bayes_model(configured_data) |>
   write_plot("bayesian_forest_plot.pdf")
 ```
 
-
-## Benefits of CRAN
-
-- Simpler to install and run locally
-- Can use various tools for checking code 
-- We will learn in advance if developers of the analytical packages make breaking changes 
+- Explained further in vignette
 
 
-## User feedback
+## User feedback is important for developing new features
 
-![images/feature_request.png]()
-
+<img src= "images/feature_request.png" width = 1600 alt = "Github screenshot of user making feature request">
 
 ## Future plans
 
@@ -562,8 +615,7 @@ bayes_model(configured_data) |>
 - Bulk downloads
 - More options for customisation - models and plots
 - More options for exclusions
-
-
+- Multiple outcomes or covariates
 
 ## Acknowledgments {.mediumtext}
 
