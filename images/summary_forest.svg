@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-8 -4 556 553">
+  <g class="svglite">
+    <defs>
+      <style type="text/css"><![CDATA[
+    @import url("https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap");
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+    .svglite text {
+      white-space: pre;
+    }
+    .svglite g.glyphgroup path {
+      fill: inherit;
+      stroke: none;
+    }
+  ]]></style>
+    </defs>
+    <rect width="540.00" height="540.00" style="stroke: none; fill: #FFFFFF;"/>
+    <defs>
+      <clipPath id="cpMC4wMHw1NDAuMDB8MC4wMHw1NDAuMDA=">
+        <rect x="0.00" y="0.00" width="540.00" height="540.00"/>
+      </clipPath>
+    </defs>
+    <g clip-path="url(#cpMC4wMHw1NDAuMDB8MC4wMHw1NDAuMDA=)">
+</g>
+    <defs>
+      <clipPath id="cpMC4wMHwxODAuMDB8MTkuMDF8MTc2Ljgz">
+        <rect x="0.00" y="19.01" width="180.00" height="157.82"/>
+      </clipPath>
+    </defs>
+    <g clip-path="url(#cpMC4wMHwxODAuMDB8MTkuMDF8MTc2Ljgz)">
+</g>
+    <defs>
+      <clipPath id="cpMi4zOHwxNzcuNjJ8MjAuOTF8MTczLjk4">
+        <rect x="2.38" y="20.91" width="175.25" height="153.07"/>
+      </clipPath>
+    </defs>
+    <g clip-path="url(#cpMi4zOHwxNzcuNjJ8MjAuOTF8MTczLjk4)">
+      <rect x="2.38" y="20.91" width="175.25" height="153.07" style="stroke-width: 0.75; fill: #F2F2F2;"/>
+      <rect x="2.38" y="20.91" width="175.25" height="153.07" style="stroke-width: 0.75; fill: #FFFFFF;"/>
+      <text x="90.00" y="55.11" text-anchor="middle" style="font-size: 14.29px; font-weight: bold; font-family: &quot;Arimo&quot;;" textLength="107.86px" lengthAdjust="spacingAndGlyphs">Gabapentinoids</text>
+      <text x="138.68" y="104.40" text-anchor="middle" style="font-size: 12.86px; font-family: &quot;Arimo&quot;;" textLength="51.75px" lengthAdjust="spacingAndGlyphs">Rank = 1</text>
+    </g>
+    <g clip-path="url(#cpMC4wMHw1NDAuMDB8MC4wMHw1NDAuMDA=)">
+      <polygon points="2.38,173.98 177.62,173.98 177.62,20.91 2.38,20.91 " style="stroke-width: 0.75; stroke: #D9D9D9;"/>
+    </g>
+    <defs>
+      <clipPath id="cpMi4zOHwxNzcuNjJ8MTc4LjczfDMzMS44MA==">
+        <rect x="2.38" y="178.73" width="175.25" height="153.07"/>
+      </clipPath>
+    </defs>
+    <g clip-path="url(#cpMi4zOHwxNzcuNjJ8MTc4LjczfDMzMS44MA==)">
+</g>
+    <defs>
+      <clipPath id="cpMC4wMHwxODAuMDB8MTc2LjgzfDMzNC42Ng==">
+        <rect x="0.00" y="176.83" width="180.00" height="157.82"/>
+      </clipPath>
+    </defs>
+    <g clip-path="url(#cpMC4wMHwxODAuMDB8MTc2LjgzfDMzNC42Ng==)">
+</g>
+    <g clip-path="url(#cpMi4zOHwxNzcuNjJ8MTc4LjczfDMzMS44MA==)">
+      <rect x="2.38" y="178.73" width="175.25" height="153.07" style="stroke-width: 0.75; fill: #FFFFFF;"/>
+      <polyline points="90.00,326.14 90.00,184.40 " style="stroke-width: 0.75; stroke: #CCCCCC;"/>
+      <polyline points="24.64,231.65 128.77,231.65 " style="stroke-width: 1.12; stroke-dasharray: 1.50,4.50;"/>
+      <polyline points="24.64,236.37 24.64,226.92 " style="stroke-width: 1.12;"/>
+      <polyline points="128.77,236.37 128.77,226.92 " style="stroke-width: 1.12;"/>
+      <polyline points="54.77,231.65 98.65,231.65 " style="stroke-width: 1.12;"/>
+      <polyline points="54.77,241.10 54.77,222.20 " style="stroke-width: 1.12;"/>
+      <polyline points="98.65,241.10 98.65,222.20 " style="stroke-width: 1.12;"/>
+      <polygon points="74.57,233.78 78.85,233.78 78.85,229.51 74.57,229.51 " style="stroke-width: 0.75; stroke: none; fill: #000000;"/>
+    </g>
+    <g clip-path="url(#cpMC4wMHw1NDAuMDB8MC4wMHw1NDAuMDA=)">
+      <polygon points="2.38,331.80 177.62,331.80 177.62,178.73 2.38,178.73 " style="stroke-width: 0.75; stroke: #D9D9D9;"/>
+    </g>
+    <defs>
+      <clipPath id="cpMi4zOHwxNzcuNjJ8MzM2LjU2fDQ4OS42Mw==">
+        <rect x="2.38" y="336.56" width="175.25" height="153.07"/>
+      </clipPath>
+    </defs>
+    <g clip-path="url(#cpMi4zOHwxNzcuNjJ8MzM2LjU2fDQ4OS42Mw==)">
+</g>
+    <defs>
+      <clipPath id="cpMC4wMHwxODAuMDB8MzM0LjY2fDQ5Mi40OA==">
+        <rect x="0.00" y="334.66" width="180.00" height="157.82"/>
+      </clipPath>
+    </defs>
+    <g clip-path="url(#cpMC4wMHwxODAuMDB8MzM0LjY2fDQ5Mi40OA==)">
+</g>
+    <g clip-path="url(#cpMi4zOHwxNzcuNjJ8MzM2LjU2fDQ4OS42Mw==)">
+      <rect x="2.38" y="336.56" width="175.25" height="153.07" style="stroke-width: 0.75; fill: #F2F2F2;"/>
+      <polyline points="90.00,483.96 90.00,342.23 " style="stroke-width: 0.75; stroke: #CCCCCC;"/>
+      <polyline points="21.17,389.47 119.03,389.47 " style="stroke-width: 1.12; stroke-dasharray: 1.50,4.50;"/>
+      <polyline points="21.17,394.20 21.17,384.75 " style="stroke-width: 1.12;"/>
+      <polyline points="119.03,394.20 119.03,384.75 " style="stroke-width: 1.12;"/>
+      <polyline points="56.52,389.47 83.68,389.47 " style="stroke-width: 1.12;"/>
+      <polyline points="56.52,398.92 56.52,380.02 " style="stroke-width: 1.12;"/>
+      <polyline points="83.68,398.92 83.68,380.02 " style="stroke-width: 1.12;"/>
+      <polygon points="67.96,391.61 72.24,391.61 72.24,387.33 67.96,387.33 " style="stroke-width: 0.75; stroke: none; fill: #000000;"/>
+      <polyline points="56.52,436.72 83.68,436.72 " style="stroke-width: 1.12; stroke: #8C8C8C;"/>
+      <polyline points="56.52,446.16 56.52,427.27 " style="stroke-width: 1.12; stroke: #8C8C8C;"/>
+      <polyline points="83.68,446.16 83.68,427.27 " style="stroke-width: 1.12; stroke: #8C8C8C;"/>
+      <polygon points="67.96,438.85 72.24,438.85 72.24,434.58 67.96,434.58 " style="stroke-width: 0.75; stroke: none; fill: #8C8C8C;"/>
+    </g>
+    <g clip-path="url(#cpMC4wMHw1NDAuMDB8MC4wMHw1NDAuMDA=)">
+      <line x1="8.87" y1="489.63" x2="171.13" y2="489.63" style="stroke-width: 0.75;"/>
+      <line x1="8.87" y1="489.63" x2="8.87" y2="497.28" style="stroke-width: 0.75;"/>
+      <line x1="49.43" y1="489.63" x2="49.43" y2="497.28" style="stroke-width: 0.75;"/>
+      <line x1="90.00" y1="489.63" x2="90.00" y2="497.28" style="stroke-width: 0.75;"/>
+      <line x1="130.57" y1="489.63" x2="130.57" y2="497.28" style="stroke-width: 0.75;"/>
+      <line x1="171.13" y1="489.63" x2="171.13" y2="497.28" style="stroke-width: 0.75;"/>
+      <text x="8.87" y="503.47" text-anchor="middle" style="font-size: 4.75px; font-family: &quot;Arimo&quot;;" textLength="8.17px" lengthAdjust="spacingAndGlyphs">-1.0</text>
+      <text x="49.43" y="503.47" text-anchor="middle" style="font-size: 4.75px; font-family: &quot;Arimo&quot;;" textLength="8.17px" lengthAdjust="spacingAndGlyphs">-0.5</text>
+      <text x="90.00" y="503.47" text-anchor="middle" style="font-size: 4.75px; font-family: &quot;Arimo&quot;;" textLength="6.59px" lengthAdjust="spacingAndGlyphs">0.0</text>
+      <text x="130.57" y="503.47" text-anchor="middle" style="font-size: 4.75px; font-family: &quot;Arimo&quot;;" textLength="6.59px" lengthAdjust="spacingAndGlyphs">0.5</text>
+      <text x="171.13" y="503.47" text-anchor="middle" style="font-size: 4.75px; font-family: &quot;Arimo&quot;;" textLength="6.59px" lengthAdjust="spacingAndGlyphs">1.0</text>
+      <polygon points="2.38,489.63 177.62,489.63 177.62,336.56 2.38,336.56 " style="stroke-width: 0.75; stroke: #D9D9D9;"/>
+    </g>
+    <defs>
+      <clipPath id="cpMTgyLjM4fDM1Ny42MnwyMC45MXwxNzMuOTg=">
+        <rect x="182.38" y="20.91" width="175.25" height="153.07"/>
+      </clipPath>
+    </defs>
+    <g clip-path="url(#cpMTgyLjM4fDM1Ny42MnwyMC45MXwxNzMuOTg=)">
+</g>
+    <defs>
+      <clipPath id="cpMTgwLjAwfDM2MC4wMHwxOS4wMXwxNzYuODM=">
+        <rect x="180.00" y="19.01" width="180.00" height="157.82"/>
+      </clipPath>
+    </defs>
+    <g clip-path="url(#cpMTgwLjAwfDM2MC4wMHwxOS4wMXwxNzYuODM=)">
+</g>
+    <g clip-path="url(#cpMTgyLjM4fDM1Ny42MnwyMC45MXwxNzMuOTg=)">
+      <rect x="182.38" y="20.91" width="175.25" height="153.07" style="stroke-width: 0.75; fill: #FFFFFF;"/>
+      <text x="270.00" y="55.39" text-anchor="middle" style="font-size: 15.08px; font-family: &quot;Arimo&quot;;" textLength="34.38px" lengthAdjust="spacingAndGlyphs">-0.16</text>
+      <text x="270.00" y="77.72" text-anchor="middle" style="font-size: 15.08px; font-family: &quot;Arimo&quot;;" textLength="93.59px" lengthAdjust="spacingAndGlyphs">(-0.43 to 0.11)</text>
+      <text x="270.00" y="126.25" text-anchor="middle" style="font-size: 15.08px;fill: #8C8C8C; font-family: &quot;Arimo&quot;;" textLength="20.95px" lengthAdjust="spacingAndGlyphs">NA</text>
+    </g>
+    <g clip-path="url(#cpMC4wMHw1NDAuMDB8MC4wMHw1NDAuMDA=)">
+      <polygon points="182.38,173.98 357.62,173.98 357.62,20.91 182.38,20.91 " style="stroke-width: 0.75; stroke: #D9D9D9;"/>
+    </g>
+    <defs>
+      <clipPath id="cpMTgyLjM4fDM1Ny42MnwxNzguNzN8MzMxLjgw">
+        <rect x="182.38" y="178.73" width="175.25" height="153.07"/>
+      </clipPath>
+    </defs>
+    <g clip-path="url(#cpMTgyLjM4fDM1Ny42MnwxNzguNzN8MzMxLjgw)">
+</g>
+    <defs>
+      <clipPath id="cpMTgwLjAwfDM2MC4wMHwxNzYuODN8MzM0LjY2">
+        <rect x="180.00" y="176.83" width="180.00" height="157.82"/>
+      </clipPath>
+    </defs>
+    <g clip-path="url(#cpMTgwLjAwfDM2MC4wMHwxNzYuODN8MzM0LjY2)">
+</g>
+    <g clip-path="url(#cpMTgyLjM4fDM1Ny42MnwxNzguNzN8MzMxLjgw)">
+      <rect x="182.38" y="178.73" width="175.25" height="153.07" style="stroke-width: 0.75; fill: #F2F2F2;"/>
+      <rect x="182.38" y="178.73" width="175.25" height="153.07" style="stroke-width: 0.75; fill: #FFFFFF;"/>
+      <text x="270.00" y="212.94" text-anchor="middle" style="font-size: 14.29px; font-weight: bold; font-family: &quot;Arimo&quot;;" textLength="64.27px" lengthAdjust="spacingAndGlyphs">Ketamine</text>
+      <text x="318.68" y="262.22" text-anchor="middle" style="font-size: 12.86px; font-family: &quot;Arimo&quot;;" textLength="51.75px" lengthAdjust="spacingAndGlyphs">Rank = 2</text>
+    </g>
+    <g clip-path="url(#cpMC4wMHw1NDAuMDB8MC4wMHw1NDAuMDA=)">
+      <polygon points="182.38,331.80 357.62,331.80 357.62,178.73 182.38,178.73 " style="stroke-width: 0.75; stroke: #D9D9D9;"/>
+    </g>
+    <defs>
+      <clipPath id="cpMTgyLjM4fDM1Ny42MnwzMzYuNTZ8NDg5LjYz">
+        <rect x="182.38" y="336.56" width="175.25" height="153.07"/>
+      </clipPath>
+    </defs>
+    <g clip-path="url(#cpMTgyLjM4fDM1Ny42MnwzMzYuNTZ8NDg5LjYz)">
+</g>
+    <defs>
+      <clipPath id="cpMTgwLjAwfDM2MC4wMHwzMzQuNjZ8NDkyLjQ4">
+        <rect x="180.00" y="334.66" width="180.00" height="157.82"/>
+      </clipPath>
+    </defs>
+    <g clip-path="url(#cpMTgwLjAwfDM2MC4wMHwzMzQuNjZ8NDkyLjQ4)">
+</g>
+    <g clip-path="url(#cpMTgyLjM4fDM1Ny42MnwzMzYuNTZ8NDg5LjYz)">
+      <rect x="182.38" y="336.56" width="175.25" height="153.07" style="stroke-width: 0.75; fill: #FFFFFF;"/>
+      <polyline points="270.00,483.96 270.00,342.23 " style="stroke-width: 0.75; stroke: #CCCCCC;"/>
+      <polyline points="213.25,389.47 313.53,389.47 " style="stroke-width: 1.12; stroke-dasharray: 1.50,4.50;"/>
+      <polyline points="213.25,394.20 213.25,384.75 " style="stroke-width: 1.12;"/>
+      <polyline points="313.53,394.20 313.53,384.75 " style="stroke-width: 1.12;"/>
+      <polyline points="246.16,389.47 280.62,389.47 " style="stroke-width: 1.12;"/>
+      <polyline points="246.16,398.92 246.16,380.02 " style="stroke-width: 1.12;"/>
+      <polyline points="280.62,398.92 280.62,380.02 " style="stroke-width: 1.12;"/>
+      <polygon points="261.25,391.61 265.53,391.61 265.53,387.33 261.25,387.33 " style="stroke-width: 0.75; stroke: none; fill: #000000;"/>
+      <polyline points="246.16,436.72 280.62,436.72 " style="stroke-width: 1.12; stroke: #8C8C8C;"/>
+      <polyline points="246.16,446.16 246.16,427.27 " style="stroke-width: 1.12; stroke: #8C8C8C;"/>
+      <polyline points="280.62,446.16 280.62,427.27 " style="stroke-width: 1.12; stroke: #8C8C8C;"/>
+      <polygon points="261.25,438.85 265.53,438.85 265.53,434.58 261.25,434.58 " style="stroke-width: 0.75; stroke: none; fill: #8C8C8C;"/>
+    </g>
+    <g clip-path="url(#cpMC4wMHw1NDAuMDB8MC4wMHw1NDAuMDA=)">
+      <line x1="188.87" y1="489.63" x2="351.13" y2="489.63" style="stroke-width: 0.75;"/>
+      <line x1="188.87" y1="489.63" x2="188.87" y2="497.28" style="stroke-width: 0.75;"/>
+      <line x1="229.43" y1="489.63" x2="229.43" y2="497.28" style="stroke-width: 0.75;"/>
+      <line x1="270.00" y1="489.63" x2="270.00" y2="497.28" style="stroke-width: 0.75;"/>
+      <line x1="310.57" y1="489.63" x2="310.57" y2="497.28" style="stroke-width: 0.75;"/>
+      <line x1="351.13" y1="489.63" x2="351.13" y2="497.28" style="stroke-width: 0.75;"/>
+      <text x="188.87" y="503.47" text-anchor="middle" style="font-size: 4.75px; font-family: &quot;Arimo&quot;;" textLength="8.17px" lengthAdjust="spacingAndGlyphs">-1.0</text>
+      <text x="229.43" y="503.47" text-anchor="middle" style="font-size: 4.75px; font-family: &quot;Arimo&quot;;" textLength="8.17px" lengthAdjust="spacingAndGlyphs">-0.5</text>
+      <text x="270.00" y="503.47" text-anchor="middle" style="font-size: 4.75px; font-family: &quot;Arimo&quot;;" textLength="6.59px" lengthAdjust="spacingAndGlyphs">0.0</text>
+      <text x="310.57" y="503.47" text-anchor="middle" style="font-size: 4.75px; font-family: &quot;Arimo&quot;;" textLength="6.59px" lengthAdjust="spacingAndGlyphs">0.5</text>
+      <text x="351.13" y="503.47" text-anchor="middle" style="font-size: 4.75px; font-family: &quot;Arimo&quot;;" textLength="6.59px" lengthAdjust="spacingAndGlyphs">1.0</text>
+      <polygon points="182.38,489.63 357.62,489.63 357.62,336.56 182.38,336.56 " style="stroke-width: 0.75; stroke: #D9D9D9;"/>
+    </g>
+    <defs>
+      <clipPath id="cpMzYyLjM4fDUzNy42MnwyMC45MXwxNzMuOTg=">
+        <rect x="362.38" y="20.91" width="175.25" height="153.07"/>
+      </clipPath>
+    </defs>
+    <g clip-path="url(#cpMzYyLjM4fDUzNy42MnwyMC45MXwxNzMuOTg=)">
+</g>
+    <defs>
+      <clipPath id="cpMzYwLjAwfDU0MC4wMHwxOS4wMXwxNzYuODM=">
+        <rect x="360.00" y="19.01" width="180.00" height="157.82"/>
+      </clipPath>
+    </defs>
+    <g clip-path="url(#cpMzYwLjAwfDU0MC4wMHwxOS4wMXwxNzYuODM=)">
+</g>
+    <g clip-path="url(#cpMzYyLjM4fDUzNy42MnwyMC45MXwxNzMuOTg=)">
+      <rect x="362.38" y="20.91" width="175.25" height="153.07" style="stroke-width: 0.75; fill: #F2F2F2;"/>
+      <text x="450.00" y="55.39" text-anchor="middle" style="font-size: 15.08px; font-family: &quot;Arimo&quot;;" textLength="34.38px" lengthAdjust="spacingAndGlyphs">-0.25</text>
+      <text x="450.00" y="77.72" text-anchor="middle" style="font-size: 15.08px; font-family: &quot;Arimo&quot;;" textLength="99.73px" lengthAdjust="spacingAndGlyphs">(-0.41 to -0.08)</text>
+      <text x="450.00" y="126.26" text-anchor="middle" style="font-size: 15.08px;fill: #8C8C8C; font-family: &quot;Arimo&quot;;" textLength="34.38px" lengthAdjust="spacingAndGlyphs">-0.25</text>
+      <text x="450.00" y="148.59" text-anchor="middle" style="font-size: 15.08px;fill: #8C8C8C; font-family: &quot;Arimo&quot;;" textLength="99.73px" lengthAdjust="spacingAndGlyphs">(-0.41 to -0.08)</text>
+    </g>
+    <g clip-path="url(#cpMC4wMHw1NDAuMDB8MC4wMHw1NDAuMDA=)">
+      <polygon points="362.38,173.98 537.62,173.98 537.62,20.91 362.38,20.91 " style="stroke-width: 0.75; stroke: #D9D9D9;"/>
+    </g>
+    <defs>
+      <clipPath id="cpMzYyLjM4fDUzNy42MnwxNzguNzN8MzMxLjgw">
+        <rect x="362.38" y="178.73" width="175.25" height="153.07"/>
+      </clipPath>
+    </defs>
+    <g clip-path="url(#cpMzYyLjM4fDUzNy42MnwxNzguNzN8MzMxLjgw)">
+</g>
+    <defs>
+      <clipPath id="cpMzYwLjAwfDU0MC4wMHwxNzYuODN8MzM0LjY2">
+        <rect x="360.00" y="176.83" width="180.00" height="157.82"/>
+      </clipPath>
+    </defs>
+    <g clip-path="url(#cpMzYwLjAwfDU0MC4wMHwxNzYuODN8MzM0LjY2)">
+</g>
+    <g clip-path="url(#cpMzYyLjM4fDUzNy42MnwxNzguNzN8MzMxLjgw)">
+      <rect x="362.38" y="178.73" width="175.25" height="153.07" style="stroke-width: 0.75; fill: #FFFFFF;"/>
+      <text x="450.00" y="213.22" text-anchor="middle" style="font-size: 15.08px; font-family: &quot;Arimo&quot;;" textLength="34.38px" lengthAdjust="spacingAndGlyphs">-0.08</text>
+      <text x="450.00" y="235.55" text-anchor="middle" style="font-size: 15.08px; font-family: &quot;Arimo&quot;;" textLength="94.72px" lengthAdjust="spacingAndGlyphs">(-0.29 to 0.13)</text>
+      <text x="450.00" y="284.08" text-anchor="middle" style="font-size: 15.08px;fill: #8C8C8C; font-family: &quot;Arimo&quot;;" textLength="34.38px" lengthAdjust="spacingAndGlyphs">-0.08</text>
+      <text x="450.00" y="306.42" text-anchor="middle" style="font-size: 15.08px;fill: #8C8C8C; font-family: &quot;Arimo&quot;;" textLength="94.72px" lengthAdjust="spacingAndGlyphs">(-0.29 to 0.13)</text>
+    </g>
+    <g clip-path="url(#cpMC4wMHw1NDAuMDB8MC4wMHw1NDAuMDA=)">
+      <polygon points="362.38,331.80 537.62,331.80 537.62,178.73 362.38,178.73 " style="stroke-width: 0.75; stroke: #D9D9D9;"/>
+    </g>
+    <defs>
+      <clipPath id="cpMzYyLjM4fDUzNy42MnwzMzYuNTZ8NDg5LjYz">
+        <rect x="362.38" y="336.56" width="175.25" height="153.07"/>
+      </clipPath>
+    </defs>
+    <g clip-path="url(#cpMzYyLjM4fDUzNy42MnwzMzYuNTZ8NDg5LjYz)">
+</g>
+    <defs>
+      <clipPath id="cpMzYwLjAwfDU0MC4wMHwzMzQuNjZ8NDkyLjQ4">
+        <rect x="360.00" y="334.66" width="180.00" height="157.82"/>
+      </clipPath>
+    </defs>
+    <g clip-path="url(#cpMzYwLjAwfDU0MC4wMHwzMzQuNjZ8NDkyLjQ4)">
+</g>
+    <g clip-path="url(#cpMzYyLjM4fDUzNy42MnwzMzYuNTZ8NDg5LjYz)">
+      <rect x="362.38" y="336.56" width="175.25" height="153.07" style="stroke-width: 0.75; fill: #F2F2F2;"/>
+      <rect x="362.38" y="336.56" width="175.25" height="153.07" style="stroke-width: 0.75; fill: #FFFFFF;"/>
+      <text x="450.00" y="365.85" text-anchor="middle" style="font-size: 14.29px; font-weight: bold; font-family: &quot;Arimo&quot;;" textLength="54.75px" lengthAdjust="spacingAndGlyphs">Placebo</text>
+      <text x="498.68" y="420.05" text-anchor="middle" style="font-size: 12.86px; font-family: &quot;Arimo&quot;;" textLength="51.75px" lengthAdjust="spacingAndGlyphs">Rank = 3</text>
+    </g>
+    <g clip-path="url(#cpMC4wMHw1NDAuMDB8MC4wMHw1NDAuMDA=)">
+      <polygon points="362.38,489.63 537.62,489.63 537.62,336.56 362.38,336.56 " style="stroke-width: 0.75; stroke: #D9D9D9;"/>
+    </g>
+    <defs>
+      <clipPath id="cpMC4wMHwxODAuMDB8OTMuMTl8MTc2Ljgz">
+        <rect x="0.00" y="93.19" width="180.00" height="83.65"/>
+      </clipPath>
+    </defs>
+    <g clip-path="url(#cpMC4wMHwxODAuMDB8OTMuMTl8MTc2Ljgz)">
+</g>
+    <defs>
+      <clipPath id="cpMTQuMjZ8MTc0LjMwfDkzLjE5fDE2NS40Mw==">
+        <rect x="14.26" y="93.19" width="160.04" height="72.24"/>
+      </clipPath>
+    </defs>
+    <g clip-path="url(#cpMTQuMjZ8MTc0LjMwfDkzLjE5fDE2NS40Mw==)">
+      <polyline points="20.18,103.89 94.28,154.99 168.37,162.48 " style="stroke-width: 1.35;"/>
+    </g>
+    <g clip-path="url(#cpMC4wMHw1NDAuMDB8MC4wMHw1NDAuMDA=)">
+      <line x1="20.18" y1="165.43" x2="168.37" y2="165.43" style="stroke-width: 0.60; stroke: #B3B3B3;"/>
+      <line x1="20.18" y1="165.43" x2="20.18" y2="169.04" style="stroke-width: 0.60; stroke: #B3B3B3;"/>
+      <line x1="94.28" y1="165.43" x2="94.28" y2="169.04" style="stroke-width: 0.60; stroke: #B3B3B3;"/>
+      <line x1="168.37" y1="165.43" x2="168.37" y2="169.04" style="stroke-width: 0.60; stroke: #B3B3B3;"/>
+      <text x="20.18" y="174.92" text-anchor="middle" style="font-size: 5.54px;fill: #B3B3B3; font-family: &quot;Arimo&quot;;" textLength="3.08px" lengthAdjust="spacingAndGlyphs">1</text>
+      <text x="168.37" y="174.92" text-anchor="middle" style="font-size: 5.54px;fill: #B3B3B3; font-family: &quot;Arimo&quot;;" textLength="3.08px" lengthAdjust="spacingAndGlyphs">3</text>
+      <line x1="16.16" y1="162.75" x2="16.16" y2="95.86" style="stroke-width: 0.60; stroke: #B3B3B3;"/>
+      <line x1="16.16" y1="162.75" x2="11.82" y2="162.75" style="stroke-width: 0.60; stroke: #B3B3B3;"/>
+      <line x1="16.16" y1="129.31" x2="11.82" y2="129.31" style="stroke-width: 0.60; stroke: #B3B3B3;"/>
+      <line x1="16.16" y1="95.86" x2="11.82" y2="95.86" style="stroke-width: 0.60; stroke: #B3B3B3;"/>
+      <text x="6.04" y="164.66" style="font-size: 5.54px;fill: #B3B3B3; font-family: &quot;Arimo&quot;;" textLength="3.08px" lengthAdjust="spacingAndGlyphs">0</text>
+      <text x="5.12" y="131.21" style="font-size: 5.54px;fill: #B3B3B3; font-family: &quot;Arimo&quot;;" textLength="7.69px" lengthAdjust="spacingAndGlyphs">0.5</text>
+      <text x="6.04" y="97.77" style="font-size: 5.54px;fill: #B3B3B3; font-family: &quot;Arimo&quot;;" textLength="3.08px" lengthAdjust="spacingAndGlyphs">1</text>
+    </g>
+    <defs>
+      <clipPath id="cpMTgwLjAwfDM2MC4wMHwyNTEuMDF8MzM0LjY2">
+        <rect x="180.00" y="251.01" width="180.00" height="83.65"/>
+      </clipPath>
+    </defs>
+    <g clip-path="url(#cpMTgwLjAwfDM2MC4wMHwyNTEuMDF8MzM0LjY2)">
+</g>
+    <defs>
+      <clipPath id="cpMTk0LjI2fDM1NC4zMHwyNTEuMDF8MzIzLjI1">
+        <rect x="194.26" y="251.01" width="160.04" height="72.24"/>
+      </clipPath>
+    </defs>
+    <g clip-path="url(#cpMTk0LjI2fDM1NC4zMHwyNTEuMDF8MzIzLjI1)">
+      <polyline points="200.18,312.62 274.28,277.16 348.37,305.06 " style="stroke-width: 1.35;"/>
+    </g>
+    <g clip-path="url(#cpMC4wMHw1NDAuMDB8MC4wMHw1NDAuMDA=)">
+      <line x1="200.18" y1="323.25" x2="348.37" y2="323.25" style="stroke-width: 0.60; stroke: #B3B3B3;"/>
+      <line x1="200.18" y1="323.25" x2="200.18" y2="326.86" style="stroke-width: 0.60; stroke: #B3B3B3;"/>
+      <line x1="274.28" y1="323.25" x2="274.28" y2="326.86" style="stroke-width: 0.60; stroke: #B3B3B3;"/>
+      <line x1="348.37" y1="323.25" x2="348.37" y2="326.86" style="stroke-width: 0.60; stroke: #B3B3B3;"/>
+      <text x="200.18" y="332.74" text-anchor="middle" style="font-size: 5.54px;fill: #B3B3B3; font-family: &quot;Arimo&quot;;" textLength="3.08px" lengthAdjust="spacingAndGlyphs">1</text>
+      <text x="348.37" y="332.74" text-anchor="middle" style="font-size: 5.54px;fill: #B3B3B3; font-family: &quot;Arimo&quot;;" textLength="3.08px" lengthAdjust="spacingAndGlyphs">3</text>
+      <line x1="196.16" y1="320.58" x2="196.16" y2="253.68" style="stroke-width: 0.60; stroke: #B3B3B3;"/>
+      <line x1="196.16" y1="320.58" x2="191.82" y2="320.58" style="stroke-width: 0.60; stroke: #B3B3B3;"/>
+      <line x1="196.16" y1="287.13" x2="191.82" y2="287.13" style="stroke-width: 0.60; stroke: #B3B3B3;"/>
+      <line x1="196.16" y1="253.68" x2="191.82" y2="253.68" style="stroke-width: 0.60; stroke: #B3B3B3;"/>
+      <text x="186.04" y="322.48" style="font-size: 5.54px;fill: #B3B3B3; font-family: &quot;Arimo&quot;;" textLength="3.08px" lengthAdjust="spacingAndGlyphs">0</text>
+      <text x="185.12" y="289.03" style="font-size: 5.54px;fill: #B3B3B3; font-family: &quot;Arimo&quot;;" textLength="7.69px" lengthAdjust="spacingAndGlyphs">0.5</text>
+      <text x="186.04" y="255.59" style="font-size: 5.54px;fill: #B3B3B3; font-family: &quot;Arimo&quot;;" textLength="3.08px" lengthAdjust="spacingAndGlyphs">1</text>
+    </g>
+    <defs>
+      <clipPath id="cpMzYwLjAwfDU0MC4wMHw0MDguODN8NDkyLjQ4">
+        <rect x="360.00" y="408.83" width="180.00" height="83.65"/>
+      </clipPath>
+    </defs>
+    <g clip-path="url(#cpMzYwLjAwfDU0MC4wMHw0MDguODN8NDkyLjQ4)">
+</g>
+    <defs>
+      <clipPath id="cpMzc0LjI2fDUzNC4zMHw0MDguODN8NDgxLjA4">
+        <rect x="374.26" y="408.83" width="160.04" height="72.24"/>
+      </clipPath>
+    </defs>
+    <g clip-path="url(#cpMzc0LjI2fDUzNC4zMHw0MDguODN8NDgxLjA4)">
+      <polyline points="380.18,478.33 454.28,462.68 528.37,427.30 " style="stroke-width: 1.35;"/>
+    </g>
+    <g clip-path="url(#cpMC4wMHw1NDAuMDB8MC4wMHw1NDAuMDA=)">
+      <line x1="380.18" y1="481.08" x2="528.37" y2="481.08" style="stroke-width: 0.60; stroke: #B3B3B3;"/>
+      <line x1="380.18" y1="481.08" x2="380.18" y2="484.69" style="stroke-width: 0.60; stroke: #B3B3B3;"/>
+      <line x1="454.28" y1="481.08" x2="454.28" y2="484.69" style="stroke-width: 0.60; stroke: #B3B3B3;"/>
+      <line x1="528.37" y1="481.08" x2="528.37" y2="484.69" style="stroke-width: 0.60; stroke: #B3B3B3;"/>
+      <text x="380.18" y="490.56" text-anchor="middle" style="font-size: 5.54px;fill: #B3B3B3; font-family: &quot;Arimo&quot;;" textLength="3.08px" lengthAdjust="spacingAndGlyphs">1</text>
+      <text x="528.37" y="490.56" text-anchor="middle" style="font-size: 5.54px;fill: #B3B3B3; font-family: &quot;Arimo&quot;;" textLength="3.08px" lengthAdjust="spacingAndGlyphs">3</text>
+      <line x1="376.16" y1="478.40" x2="376.16" y2="411.51" style="stroke-width: 0.60; stroke: #B3B3B3;"/>
+      <line x1="376.16" y1="478.40" x2="371.82" y2="478.40" style="stroke-width: 0.60; stroke: #B3B3B3;"/>
+      <line x1="376.16" y1="444.95" x2="371.82" y2="444.95" style="stroke-width: 0.60; stroke: #B3B3B3;"/>
+      <line x1="376.16" y1="411.51" x2="371.82" y2="411.51" style="stroke-width: 0.60; stroke: #B3B3B3;"/>
+      <text x="366.04" y="480.30" style="font-size: 5.54px;fill: #B3B3B3; font-family: &quot;Arimo&quot;;" textLength="3.08px" lengthAdjust="spacingAndGlyphs">0</text>
+      <text x="365.12" y="446.86" style="font-size: 5.54px;fill: #B3B3B3; font-family: &quot;Arimo&quot;;" textLength="7.69px" lengthAdjust="spacingAndGlyphs">0.5</text>
+      <text x="366.04" y="413.41" style="font-size: 5.54px;fill: #B3B3B3; font-family: &quot;Arimo&quot;;" textLength="3.08px" lengthAdjust="spacingAndGlyphs">1</text>
+      <text x="270.00" y="514.34" text-anchor="middle" style="font-size: 9.00px; font-family: &quot;Arimo&quot;;" textLength="284.34px" lengthAdjust="spacingAndGlyphs">Mean Difference with 95% confidence interval &amp; 95% prediction interval</text>
+      <text x="0.00" y="528.60" style="font-size: 9.00px; font-family: &quot;Arimo&quot;;" textLength="413.33px" lengthAdjust="spacingAndGlyphs">Key: NMA results in black; Pairwise MA results in grey. 95% confidence interval presented as error bars.</text>
+      <text x="0.00" y="538.10" style="font-size: 9.00px; font-family: &quot;Arimo&quot;;" textLength="214.00px" lengthAdjust="spacingAndGlyphs">Interventions are ranked and sorted by SUCRA value.</text>
+    </g>
+  </g>
+</svg>
+

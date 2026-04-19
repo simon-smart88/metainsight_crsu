@@ -1,0 +1,261 @@
+---
+title: |
+ ![](https://raw.githubusercontent.com/CRSU-Apps/MetaInsight/main/www/images/MetaInsightLogo.png){width=100px} MetaInsight v7.0.0 Session 2026-04-19
+format:
+  html:
+    embed-resources: true
+    code-overflow: wrap
+    code-fold: true
+    code-summary: "View code chunk"
+    page-layout: article
+    grid:
+      body-width: 1200px
+fig-format: svg
+execute:
+  warning: false
+  message: false
+theme: spacelab
+---
+
+::: {.panel-tabset}
+
+## Introduction
+
+Please find below the R code history from your *metainsight* v7.0.0
+session.
+
+You can reproduce your session results by running this quarto file in
+RStudio.
+
+Each code block is called a “chunk”, and you can run them either
+one-by-one or all at once by choosing an option in the “Run” menu at the
+top-right corner of the “Source” pane in RStudio. The file can also be
+rendered into an html file using `quarto::quarto_render()` which will
+contain all of the outputs alongside the code used to generate them.
+
+For more detailed information see <https://quarto.org/>.
+
+### Package installation
+
+metainsight is an R package and it must be installed and loaded before
+running any code. This can take a considerable time depending on your
+computing environment. Some analyses use JAGS and you should install
+this before installing the package: <https://mcmc-jags.sourceforge.io/>
+
+```{r}
+if(!require("metainsight")) remotes::install_github("CRSU-Apps/MetaInsight", ref = "shinyscholar")
+library(metainsight)
+```
+
+The *metainsight* session code .qmd file is composed of a chain of
+module functions that are internal to *metainsight*. Each of these
+functions corresponds to a single module that the user ran during the
+session. Users are encouraged to write custom code in the .qmd directly
+to modify their analysis, and even modify the module function code to
+further customize. To see the source code for any module function, just
+type its name into the R console and press Return.
+
+Your analyses can be found in the tabs above.
+
+------------------------------------------------------------------------
+
+## Setup
+
+### Read the data, assemble into loaded data in and display a table
+
+```{r}
+raw_data <- structure(list(Study = c("Study01", "Study01", "Study02", "Study02", "Study03", "Study03", "Study04", "Study04", "Study05", "Study05", "Study06", "Study06", "Study07", "Study07", "Study08", "Study08", "Study09", "Study09", "Study10", "Study10", "Study11", "Study11", "Study12", "Study12", "Study13", "Study13", "Study14", "Study14", "Study15", "Study15", "Study16", "Study16", "Study17", "Study17", "Study18", "Study18", "Study19", "Study19", "Study20", "Study20", "Study21", "Study21", "Study22", "Study22", "Study23", "Study23", "Study24", "Study24", "Study25", "Study25", "Study26", "Study26", "Study27", "Study27", "Study28", "Study28", "Study29", "Study29", "Study30", "Study30", "Study31", "Study31", "Study32", "Study32", "Study33", "Study33", "Study34", "Study34", "Study35", "Study35", "Study36", "Study36", "Study37", "Study37", "Study38", "Study38", "Study39", "Study39", "Study40", "Study40", "Study41", "Study41", "Study42", "Study42", "Study43", "Study43", "Study44",
+"Study44", "Study45", "Study45"), T = c("Placebo", "Glucocorticoids", "Placebo", "Glucocorticoids", "Placebo", "Glucocorticoids", "Placebo", "Glucocorticoids", "Placebo", "Ketamine", "Placebo", "Ketamine", "Placebo", "Ketamine", "Placebo", "Ketamine", "Placebo", "Ketamine", "Placebo", "Ketamine", "Placebo", "Ketamine", "Placebo", "Ketamine", "Placebo", "Ketamine", "Placebo", "Ketamine", "Placebo", "Ketamine", "Placebo", "Ketamine", "Placebo", "Ketamine", "Placebo", "Ketamine", "Placebo", "Ketamine", "Placebo", "Ketamine", "Placebo", "Ketamine", "Placebo", "Ketamine", "Placebo", "Gabapentinoids", "Placebo", "Gabapentinoids", "Placebo", "Gabapentinoids", "Placebo", "Gabapentinoids", "Placebo", "Gabapentinoids", "Placebo", "Gabapentinoids", "Placebo", "Gabapentinoids", "Placebo", "Gabapentinoids", "Placebo", "Gabapentinoids", "Placebo", "Gabapentinoids", "Placebo", "Gabapentinoids", "Placebo", "Gabapentinoids", "Placebo", "Gabapentinoids", "Placebo", "Gabapentinoids", "Placebo",
+"Gabapentinoids", "Placebo", "Gabapentinoids", "Placebo", "Gabapentinoids", "Placebo", "Gabapentinoids", "Placebo", "Gabapentinoids", "Placebo", "Gabapentinoids", "Placebo", "Gabapentinoids", "Placebo", "Gabapentinoids", "Placebo", "Gabapentinoids"), Mean = c(2.2, 1.9, 2, 2, 1.4, 1.4, 2.9, 2.6, 5.4, 3, 1, 1, 0, 0, 0, 0, 4, 4, 0.3, 1.1, 0.5, 2, 1.3, 1.4, 0, 0, 1.5, 0.3, 1, 0.7, 4, 4.3, 2, 2, 1.5, 0, 3.4, 2.4, 1, 0.5, 0.1, 0.2, 0.8, 0.8, 3.4, 3.1, 0, 0, 0.6, 0.2, 0.6, 0.5, 2.2, 2.6, 2.5, 3, 1.2, 0.5, 2.2, 2.1, 0.2, 0.1, 2, 1, 1.1, 0.9, 3, 2, 2, 1.8, 3.4, 2.5, 1.9, 1.5, 0, 0, 3, 2, 1.5, 1.1, 0.5, 1, 0, 0, 1.5, 1.3, 0.03, 0.4, 1.2, 1.4), SD = c(2.5, 2.4, 3.7, 2.8, 1.6, 1.7, 2.5, 2.4, 3.6, 3.5, 1.5, 1.5, 0.2, 0.7, 0.1, 0.3, 3.3, 2.2, 0.7, 2.1, 3.7, 1.7, 1.5, 1.4, 1.9, 0.7, 4.4, 3, 1.7, 1.4, 2.1, 2.5, 1.5, 1.5, 2.2, 1.5, 3, 1.1, 1.8, 1.7, 0.7, 0.7, 1.1, 0.9, 1.6, 1.7, 0.7, 0.7, 0.9, 0.4, 0.1, 0.9, 1.4, 1.7, 1, 0.8, 1.5, 0.9, 0.9, 1.2, 0.1, 0.1, 1.5, 0.6, 1.5, 1.2, 1.9, 1.5, 2.5, 2, 1.4,
+1.2, 2, 1.9, 0.7, 2.1, 0.8, 0.5, 2, 1.6, 1.5, 1.5, 0.7, 0.7, 2.8, 2.2, 0.2, 0.9, 1.7, 1.7), N = c(50L, 62L, 45L, 92L, 88L, 78L, 47L, 46L, 52L, 43L, 84L, 84L, 34L, 33L, 35L, 34L, 66L, 73L, 19L, 18L, 6L, 8L, 47L, 31L, 24L, 25L, 17L, 15L, 35L, 33L, 42L, 49L, 62L, 118L, 22L, 22L, 7L, 8L, 25L, 55L, 38L, 39L, 30L, 31L, 10L, 21L, 53L, 65L, 20L, 20L, 35L, 27L, 22L, 23L, 4L, 2L, 30L, 60L, 50L, 50L, 20L, 20L, 29L, 30L, 24L, 17L, 49L, 50L, 28L, 83L, 100L, 100L, 24L, 22L, 48L, 52L, 31L, 62L, 20L, 18L, 18L, 16L, 46L, 46L, 27L, 27L, 35L, 70L, 76L, 75L), covar.age = c(45, 45, 75.5, 75.5, 71.3, 71.3, 54.5, 54.5, 56, 56, 50.2, 50.2, 64.5, 64.5, 60.2, 60.2, 66.5, 66.5, 60, 60, 55.3, 55.3, 49.5, 49.5, 38.5, 38.5, 68.8, 68.8, 64.8, 64.8, 47.6, 47.6, 57, 57, 66, 66, 61.7, 61.7, 52.5, 52.5, 48.3, 48.3, 63.8, 63.8, 60.2, 60.2, 60.2, 60.2, 60.1, 60.1, 41.5, 41.5, 65, 65, 34.5, 34.5, 47.7, 47.7, 43.5, 43.5, 56.9, 56.9, 24, 24, 40, 40, 62.4, 62.4, 66.5, 66.5, 50.9, 50.9, 43.5, 43.5, 50.5, 50.5, 67.1, 67.1,
+39.1, 39.1, 70.3, 70.3, 68.5, 68.5, 52.1, 52.1, 43.1, 43.1, 62.9, 62.9), rob = c(3L, 3L, 1L, 1L, 3L, 3L, 3L, 3L, 2L, 2L, 3L, 3L, 3L, 3L, 2L, 2L, 3L, 3L, 3L, 3L, 3L, 3L, 3L, 3L, 3L, 3L, 3L, 3L, 3L, 3L, 3L, 3L, 3L, 3L, 3L, 3L, 3L, 3L, 3L, 3L, 1L, 1L, 3L, 3L, 3L, 3L, 3L, 3L, 3L, 3L, 3L, 3L, 3L, 3L, 1L, 1L, 2L, 2L, 3L, 3L, 3L, 3L, 1L, 1L, 3L, 3L, 3L, 3L, 2L, 2L, 3L, 3L, 3L, 3L, 3L, 3L, 3L, 3L, 3L, 3L, 2L, 2L, 2L, 2L, 2L, 2L, 3L, 3L, 3L, 3L), indirectness = c(1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L), rob.randomisation = c(1L, 1L, 1L, 1L, 1L, 1L, 2L, 2L, 1L, 1L, 1L, 1L, 1L, 1L, 2L, 2L, 1L, 1L, 1L, 1L, 2L, 2L, 2L, 2L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L,
+1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 2L, 2L, 2L, 2L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 2L, 2L, 1L, 1L, 1L, 1L, 2L, 2L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L), rob.allocation_concealment = c(1L, 1L, 2L, 2L, 1L, 1L, 2L, 2L, 1L, 1L, 1L, 1L, 1L, 1L, 2L, 2L, 1L, 1L, 2L, 2L, 2L, 2L, 2L, 2L, 1L, 1L, 2L, 2L, 2L, 2L, 2L, 2L, 1L, 1L, 2L, 2L, 1L, 1L, 2L, 2L, 1L, 1L, 2L, 2L, 1L, 1L, 1L, 1L, 2L, 2L, 2L, 2L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 2L, 2L, 2L, 2L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 2L, 2L, 1L, 1L, 2L, 2L, 1L, 1L, 1L, 1L, 2L, 2L, 1L, 1L, 2L, 2L, 1L, 1L), `rob.blinding_(participants_and_personnel)` = c(1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 3L, 3L, 1L, 1L, 1L, 1L,
+1L, 1L), `rob.blinding_(outcomes)` = c(1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 2L, 2L, 1L, 1L, 2L, 2L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 2L, 2L, 1L, 1L, 1L, 1L, 1L, 1L, 2L, 2L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 2L, 2L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L), rob.attrition = c(3L, 3L, 1L, 1L, 1L, 1L, 3L, 3L, 3L, 3L, 1L, 1L, 3L, 3L, 3L, 3L, 3L, 3L, 3L, 3L, 1L, 1L, 1L, 1L, 3L, 3L, 3L, 3L, 3L, 3L, 3L, 3L, 3L, 3L, 1L, 1L, 3L, 3L, 3L, 3L, 1L, 1L, 3L, 3L, 3L, 3L, 3L, 3L, 1L, 1L, 3L, 3L, 3L, 3L, 3L, 3L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 3L, 3L, 3L, 3L, 3L, 3L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 3L, 3L, 1L, 1L, 3L, 3L, 1L, 1L, 3L, 3L), rob.reporting = c(3L, 3L, 3L, 3L, 3L, 3L, 3L, 3L, 1L, 1L, 1L, 1L, 3L, 3L, 1L, 1L, 1L, 1L, 1L, 1L, 2L, 2L, 2L, 2L, 1L, 1L, 2L, 2L, 1L, 1L, 2L, 2L, 2L, 2L, 2L, 2L, 2L, 2L, 2L, 2L, 3L, 3L, 2L, 2L, 2L, 2L, 2L, 2L, 2L, 2L,
+2L, 2L, 3L, 3L, 1L, 1L, 2L, 2L, 3L, 3L, 2L, 2L, 2L, 2L, 1L, 1L, 1L, 1L, 3L, 3L, 2L, 2L, 2L, 2L, 2L, 2L, 3L, 3L, 2L, 2L, 2L, 2L, 3L, 3L, 3L, 3L, 2L, 2L, 2L, 2L), rob.other_bias = c(1L, 1L, 1L, 1L, 1L, 1L, 3L, 3L, 1L, 1L, 1L, 1L, 3L, 3L, 3L, 3L, 1L, 1L, 3L, 3L, 3L, 3L, 1L, 1L, 1L, 1L, 3L, 3L, 1L, 1L, 1L, 1L, 3L, 3L, 1L, 1L, 1L, 1L, 3L, 3L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 3L, 3L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 3L, 3L, 3L, 3L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 3L, 3L, 2L, 2L, 3L, 3L, 2L, 2L, 1L, 1L, 3L, 3L)), row.names = c(NA, 90L), class = "data.frame")
+treatments <- structure(list(Number = 1:4, Label = c("Placebo", "Glucocorticoids", "Ketamine", "Gabapentinoids")), class = "data.frame", row.names = c(NA, -4L))
+outcome <- "continuous"
+
+loaded_data <- list(data = raw_data,
+                    treatments = treatments,
+                    outcome = outcome,
+                    is_data_valid = TRUE)
+class(loaded_data) <- "loaded_data"
+
+DT::datatable(raw_data, 
+              options = list(
+                scrollX = TRUE,
+                autoWidth = FALSE)
+              )
+```
+
+### Configure the analysis and process the data into suitable formats for analysis
+
+```{r}
+uncleaned_reference_treatment <- "Placebo"
+ranking_option <- "good"
+outcome_measure <- "MD"
+model_effects <- "random"
+seed <- 370
+
+configured_data <- setup_configure(loaded_data, 
+                                   uncleaned_reference_treatment, 
+                                   model_effects,
+                                   outcome_measure,
+                                   ranking_option,
+                                   seed)
+
+knitr::kable(setup_configure_table(configured_data),
+             row.names = TRUE,
+             col.names = NULL,
+             caption = "Analysis configuration")
+```
+
+### Exclude selected studies from the analysis
+
+```{r}
+excluded_studies <- c("Study09", "Study13", "Study16", "Study19", "Study21", "Study28", "Study30", "Study26", "Study24")
+subsetted_data <- setup_exclude(configured_data, excluded_studies)
+```
+
+### Display summary forest plot showing excluded studies
+
+```{r, results = 'asis'}
+
+setup_exclude_plot(configured_data, excluded_studies)
+```
+
+## Summary
+
+### Display the networks for the original data and data with excluded studies.
+
+```{r, results = 'asis', out.extra='style=“height: 400px;”'}
+
+network_style <- "netplot"
+
+summary_network(configured_data, 
+                network_style, 
+                1, 
+                "Network plot of all studies") 
+```
+
+```{r, results = 'asis'}
+
+summary_network(subsetted_data, 
+                network_style, 
+                1, 
+                "Network plot with selected \n studies excluded") 
+```
+
+### Display a table summarising the network characteristics of the original data and data with excluded studies.
+
+```{r}
+network_df_all <- make_netconnect(configured_data$freq)
+network_df_sub <- make_netconnect(subsetted_data$freq)
+network_df_compare <- data.frame(network_df_all, network_df_sub)
+colnames(network_df_compare) <- c("All studies", "With selected studies excluded")
+rownames(network_df_compare) <- c("Studies", "Pairwise comparisons", "Treatments", "Designs", "Subnetworks")
+
+knitr::kable(network_df_compare, row.names = TRUE, caption = "Comparison of network characteristics")
+```
+
+## Frequentist
+
+### Generate forest plots
+
+```{r, results = 'asis'}
+
+freq_forest(configured_data,
+            -0.7,
+            0.4,
+            "Results for all studies") 
+```
+
+```{r, results = 'asis'}
+
+freq_forest(subsetted_data,
+            -0.7,
+            0.5,
+            "Results with selected studies excluded") 
+```
+
+,
+
+## Bayesian
+
+### Fit the Bayesian models
+
+```{r}
+bayes_model_all <- bayes_model(configured_data)
+bayes_model_sub <- bayes_model(subsetted_data)
+```
+
+```{r}
+dic_table(bayes_model_all$dic, "all")
+```
+
+```{r}
+dic_table(bayes_model_sub$dic, "sub")
+```
+
+### Produce forest plots of the Bayesian models
+
+```{r, results = 'asis'}
+
+bayes_forest(bayes_model_all, 
+             "All studies",
+             xmin = -0.7,
+             xmax = 0.5)
+```
+
+```{r, results = 'asis'}
+
+bayes_forest(bayes_model_sub, 
+             "With selected studies excluded",
+             xmin = -0.8,
+             xmax = 0.5)
+```
+
+## Baseline risk
+
+### Fit the baseline risk model
+
+```{r}
+baseline_model <- baseline_model(get("configured_data"), "shared")
+
+dic_table(baseline_model$dic)
+```
+
+### Produce forest plot of the baseline risk model
+
+```{r, results = 'asis'}
+
+baseline_forest(baseline_model, 
+                xmin = -0.5,
+                xmax = 0.4,
+                title = "Baseline risk regression analysis")
+```
+
+## Covariate
+
+### Fit the covariate model
+
+```{r}
+covariate_value <- 55
+covariate_regressor <- "shared"
+covariate_model <- covariate_model(get("configured_data"), 
+                                   covariate_value, 
+                                   covariate_regressor)
+
+dic_table(covariate_model$dic)
+```
+
+### Produce forest plot of the covariate model
+
+```{r, results = 'asis'}
+
+covariate_forest(covariate_model, 
+                 xmin = -0.8,
+                 xmax = 0.5,
+                 title = "Covariate regression analysis")
+```
+
