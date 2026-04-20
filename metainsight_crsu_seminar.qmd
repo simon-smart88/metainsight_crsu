@@ -495,8 +495,6 @@ summary_network(configured_data,
 ````
 :::
 
-<br/>
-
 ::: {.fragment .fade-in}
 
 ````markdown
