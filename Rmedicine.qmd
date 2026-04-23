@@ -1,0 +1,540 @@
+---
+title: "MetaInsight v7"
+subtitle: "Making a comprehensive app for network meta-analysis reproducible"
+author: "Simon Smart"
+format: 
+  revealjs:
+    logo: images/uol_logo.png
+    code-line-numbers: false
+    theme: [default, custom.scss]
+    width: 1600  
+    height: 900
+    scale: true
+    slide-number: true
+    embed-resources: true
+date: "7 May 2026"
+date-format: "Do MMMM YYYY"
+preload-iframes: false
+---
+
+## Overview of the seminar
+
+```{css}
+h1.title {
+  background-image: url(images/mi_logo.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 400px;
+  padding: 60px 0;
+  color: #00000000;
+}
+```
+
+::: {.incremental .highlight-last}
+- What is network meta-analysis?
+- History of MetaInsight
+- Demonstration of new features
+- How challenges were addressed
+:::
+
+## About me
+
+::: {.incremental .highlight-last}
+- Software developer in Biostatistics group at University of Leicester
+- Background in agricultural science
+- Developing Shiny apps since 2018
+:::
+
+## Network meta-analysis can help determine the 'best' treatment option
+
+<img src= "images/network_plot.png" height = 600 alt = "Network of six treatments where there are different numbers of trials that compared each pair" class = centre_image>
+
+::: footer
+Data from Elliot & Meyer (2007) <a href="https://doi.org/10.1016/s0140-6736(07)60108-1" target="_blank">10.1016/s0140-6736(07)60108-1</a>
+:::
+
+## MetaInsight provides frequentist and Bayesian methods
+
+<img src= "images/summary_forest.svg" height = 600 alt = "Summary forest plot summarising frequentist results" class = centre_image>
+
+::: footer
+Data from Doleman *et al.* (2023) <a href="https://doi.org/10.1016/j.bja.2023.02.041" target="_blank">10.1016/j.bja.2023.02.041</a>
+:::
+
+## MetaInsight provides frequentist and Bayesian methods
+
+<img src= "images/ranking_plot.png" height = 600 alt = "Line graph showing the output of an analysis where each treatment is ranked by outcome" class = centre_image>
+
+::: footer
+Data from Elliot & Meyer (2007) <a href="https://doi.org/10.1016/s0140-6736(07)60108-1" target="_blank">10.1016/s0140-6736(07)60108-1</a> <br/> Plot developed by Nevill *et al.* (2023) <a href="https://doi.org/10.1016/j.jclinepi.2023.02.016" target="_blank">10.1016/j.jclinepi.2023.02.016</a> 
+:::
+
+## Sensitivity analyses can be run in parallel to the main analysis
+
+::: columns
+::: {.column width="50%"}
+<img src= "images/frequentist_forest_all.svg">
+:::
+::: {.column width="50%"}
+<img src= "images/frequentist_forest_sub.svg">
+:::
+::: 
+
+::: footer
+Data from Doleman *et al.* (2023) <a href="https://doi.org/10.1016/j.bja.2023.02.041" target="_blank">10.1016/j.bja.2023.02.041</a>
+:::
+
+## Baseline risk meta-regression considers the initial health of participants
+
+::: columns
+::: {.column width="50%"}
+- Compare reference treatment arms
+:::
+::: {.column width="50%"}
+<img src= "images/baseline_forest.svg" alt = "Forest plot showing the treatment effects after controlling for baseline risk" >
+:::
+:::
+
+::: footer
+Data from Doleman *et al.* (2023) <a href="https://doi.org/10.1016/j.bja.2023.02.041" target="_blank">10.1016/j.bja.2023.02.041</a>
+:::
+
+## Covariate meta-regression evaluates the effect of covariates
+
+::: columns
+::: {.column width="50%"}
+- Does the age of participants affect the outcome?
+:::
+::: {.column width="50%"}
+<img src= "images/covariate_regression.png" alt = "Regression plot showing the effect of age on the response. The lines are horizontal indicating there is no effect." >
+:::
+::: 
+
+::: footer
+Data from Doleman *et al.* (2023) <a href="https://doi.org/10.1016/j.bja.2023.02.041" target="_blank">10.1016/j.bja.2023.02.041</a> <br/> Plot adapted from Donegan *et al.* (2018) <a href="https://doi.org/10.1016/j.jclinepi.2025.111839" target="_blank">10.1016/j.jclinepi.2025.111839</a> and developed by Morris *et al.* (2025) <a href="https://doi.org/10.1002/jrsm.1292" target="_blank">10.1002/jrsm.1292</a>
+:::
+
+## Complex meta-analyses require extensive statistical and programming knowledge
+
+::: {.incremental .highlight-last}
+- BUGSnet, bnma, coda, gemtc, meta, metafor, netmeta
+- JAGS may be hard to install
+- Require data in different formats and use different terminology
+:::
+
+
+
+## Shiny removes barriers for accessing cutting-edge methods
+
+::: columns
+::: {.column width="60%"}
+- MetaInsight was developed to make NMA more accessible 
+- Originally developed by statisticians, but increasingly in collaboration with developers 
+:::
+::: {.column width="40%"}
+<img src = "images/citations.png" alt = "Line graph showing cumulative citations of Owen 2019 since 2020, now a total of 300">
+:::
+:::
+
+```{r echo = FALSE, eval = FALSE}
+png("images/citations.png", 600, 600)
+Year <- 2020:2026 
+Citations <- c(6, 17, 28, 57, 66, 97, 29)
+`Cumulative citations` <- cumsum(Citations)
+
+par(cex = 1.5, bg = '#d8e6e4')
+plot(Year, `Cumulative citations`, type = "l", col = "darkblue", lwd = 4, ylab = "", main = "Cumulative citations")
+dev.off()
+```
+
+::: footer
+Owen *et al.* (2019) <a href="https://doi.org/10.1002/jrsm.1373" target="_blank">10.1002/jrsm.1373</a>; Scopus (2026-03-27); Bradbury *et al.* (2025) <a href="https://doi.org/10.1186/s12874-024-02450-9" target="_blank">10.1186/s12874-024-02450-9</a>
+:::
+
+::: notes
+has users worldwide and increasing citations and use in CROs
+:::
+
+## MetaInsight has a global userbase
+
+```{r}
+library(ggplot2)
+library(sf)
+library(rnaturalearth)
+library(rnaturalearthdata)
+library(dplyr)
+
+data <- read.csv("analytics.csv")
+world <- ne_countries(scale = "medium", returnclass = "sf")
+
+map_data <- world %>%
+  left_join(data, by = c("name" = "country"))
+
+ggplot(data = map_data) +
+  geom_sf(aes(fill = count), color = "white", size = 0.2) +
+  scale_fill_gradient(
+    name = "Users",
+    low = "#005c8a",
+    high = "#e4042c",
+    na.value = "grey90"
+  ) +
+  labs(
+    caption = "Source: Google Analytics"
+  ) +
+  theme_void() +
+  theme(
+    legend.position = "right",
+    plot.title = element_text(size = 16, face = "bold"),
+    plot.subtitle = element_text(size = 12, color = "gray50"),
+    panel.grid = element_blank()
+  )
+```
+
+## 
+
+<div style="display: flex; justify-content: center; margin-top: -80px">
+  <img src="images/metainsight_existing.png" width = 1400 alt = "Screenshot of the existing app">
+</div>
+
+::: notes
+
+- some options always visible when not needed
+- small graphs
+- download everything as a png would take many clicks
+
+:::
+
+## The 'black box' nature of apps can limit uptake
+
+::: columns
+::: {.column width="50%"}
+- Open science principles require that code can be rerun
+- NICE require that NMAs are reproducible
+:::
+
+::: {.column width="50%"}
+<img src="images/nice_reproducibility.png" width="auto" height="auto" align="right" alt="Screenshot of NICE report showing WinBUGS code">
+:::
+:::
+
+::: footer
+<a href="https://www.nice.org.uk/guidance/ng238" target="_blank">nice.org.uk/guidance/ng238</a>; <a href="https://www.nice.org.uk/guidance/ng238/evidence/network-metaanalysis-of-changes-in-ldl-cholesterol-and-nonhdl-cholesterol-as-a-result-of-escalation-of-lipidlowering-treatment-for-secondary-prevention-of-cvd-pdf-13254044222" target="_blank"> NMA report</a> 
+:::
+
+
+## shinyscholar was developed to address this
+
+::: columns
+::: {.column width="70%"}
+- shinyscholar was forked from wallace to make development of reproducible apps easier
+- Convert core functionality into functions and package
+- App becomes an interface to the functions, dealing with interactivity
+:::
+::: {.column width="30%"}
+<img src="images/shinyscholar.png" width="auto" height="auto" align="right" alt="Hex logo of shinyscholar showing a black and white mortar cap">
+:::
+:::
+
+::: footer
+Smart *et al.* (2025) <a href="https://doi.org/10.32614/CRAN.package.shinyscholar" target="_blank">10.32614/CRAN.package.shinyscholar</a>
+:::
+
+## Aims for version 7
+
+:::{.incremental .highlight-last}
+- Make analyses reproducible
+- Upload risk of bias and integrate with CiNeMA
+- Produce a downloadable report
+- Improve quality and consistency of downloaded plots
+- Maintain user experience
+:::
+
+## 
+
+<img src="images/metainsight_existing_options.png" width = 1400 alt = "Screenshot of the existing app" class = "centre_image">
+
+## 
+
+<img src="images/metainsight_existing_menus.png" width = 1400 alt = "Screenshot of the existing app" class = "centre_image">
+
+## Various adjustments were made to the shinyscholar template
+
+:::{.incremental .highlight-last}
+- Multiple parallel analyses rather than a single linear analysis
+- Needed to maintain the functionality of excluding studies at any point
+- Opportunities to reuse code within and between modules 
+:::
+
+## Functions manipulate data, modules control when functions are called
+
+:::{.incremental .highlight-last}
+
+- Separates the what from when
+- Functions are easier to test 
+:::
+
+## Incorporating risk of bias scores improves sensitivity analyses
+::: {.incremental .highlight-last}
+- During reviews, risk of bias information can be collected e.g.
+  - Randomisation, blinding, missing data
+- Scores can guide sensitivity analyses
+:::
+
+## Risk of data can now be uploaded as part of the dataset
+
+::: columns
+::: {.column width="50%"}
+- Name columns as `rob.<name>` or `rob` and `indirectness`
+- New plot summarises study results and RoB data
+::: 
+::: {.column width="50%"}
+<img src = "images/summary_study.png" alt = "Forest plot summarising study results and showing risk of bias scores" height = "600px" class = "centre_image">
+:::
+:::
+
+## Integration with CINeMA helps to evaluate confidence in findings
+
+::: columns
+::: {.column width="50%"}
+<img src = "images/cinema_logo.svg" alt = "Cinema logo" class = "centre_image">
+
+- Uses risk of bias scores for *studies* to evaluate evidence for *treatments*
+
+:::
+::: {.column width="50%"}
+<img src = "images/diabetes_netplot.png" height = 500 style="margin-left: 120px;" alt = "Network plot as in the first slide but with the nodes between each treatment pair coloured according to the risk of bias">
+:::
+:::
+
+::: footer
+<a href="https://cinema.ispm.unibe.ch/" target="_blank">cinema.ispm.unibe.ch</a> ;
+Papakonstantinou *et al.* (2020) <a href="https://doi.org/10.1002/cl2.1080" target="_blank">10.1002/cl2.1080</a> 
+:::
+
+## Uploaded datasets can create difficulties
+
+:::{.incremental .highlight-last}
+- Contain errors which could crash the app
+- Vary in the number of studies and treatments
+- Treatment and study names can vary in length
+:::
+
+## Uploaded datasets can create difficulties
+
+<img src = "images/overloaded_network.png" height = 700px alt = "Screenshot showing existing interface for excluding studies from an analysis" class = "centre_image">
+
+## Previously studies were excluded by clicking in the sidebar
+
+<img src = "images/metainsight_existing_exclusions.png" height = 700px alt = "Screenshot showing existing interface for excluding studies from an analysis">
+
+## A new graphical interface has been developed to exclude studies
+
+- The table has been replaced with the summary forest plot but which is interactive
+- Clicking on a row excludes or includes the study
+
+## Reactivity is a blessing and a curse
+
+:::{.incremental .highlight-last}
+- Reactivity controls when code is rerun
+- As complexity grows, it can be difficult to control and code can rerun unnecessarily
+- Previously Bayesian models had to be rerun when manually when settings changed
+:::
+
+## Slow-running tasks run in the background
+
+:::{.incremental .highlight-last}
+- Fitting models can block the app for other users
+- Spinner appears whilst waiting
+- Can be cancelled
+- Uses `shiny::ExtendedTask()` and `mirai::mirai()`
+:::
+
+## Producing publication-ready figures
+
+:::{.incremental .highlight-last}
+- Ideally plots can be downloaded and used without editing
+- Reuse plots from other packages, others custom-built
+- Mixture of base plots, grid and ggplot2
+:::
+
+## 
+
+<img src="images/metainsight_existing_plot_size.png" width = 1400 alt = "Screenshot of the existing app" class = "centre_image">
+
+## 
+
+<img src="images/metainsight_existing_limits.png" width = 1400 alt = "Screenshot of the existing app" class = "centre_image">
+
+## 
+
+<img src="images/metainsight_existing_format.png" width = 1400 alt = "Screenshot of the existing app" class = "centre_image">
+
+##
+
+<img src="images/forest_cutoff.png" alt = "Screenshot showing forest plots that are cutoff on small screens">
+
+## Some downloaded plots had wide margins and low resolution
+
+<img src="images/old_forest.png" alt = "Forest plot downloaded from existing app showing wide white borders and low resolution" class = "centre_image">
+
+## Adjusting plots to always fit is challenging
+
+::: {.incremental .highlight-last}
+- Dimensions need to be adjusted depending on dataset
+- Space available to display depends on screen size
+- Information in plot margins takes up a fixed number of pixels
+:::
+
+## Plots are now all produced using a consistent workflow
+
+::: {.incremental .highlight-last}
+- Functions generate SVGs 
+- In app they squash and stretch freely
+- Enables fullscreen viewing
+- Can all be rendered to png, pdf or saved as svg
+- Enables testing of reproducibility
+:::
+
+## Reproducibility relies on a strict structure
+
+::: {.incremental .highlight-last}
+- Each module has an id made up of the component and module `summary_network`
+- Each calls a synonymous function `summary_network()`
+- Input values are stored in `common$meta$summary_network$<input id>`
+- Values are knitted into an .Rmd chunk and combined to create a .qmd
+:::
+
+## Reproducibility relies on a strict structure {.mediumcode}
+
+::: {.fragment .fade-in}
+````markdown
+```{{asis, echo = {{summary_network_knit}}, eval = {{summary_network_knit}}, include = {{summary_network_knit}}}}
+### Display the networks for the original data and data with excluded studies.
+{r,  results = 'asis'}
+```
+```{{r, echo = {{summary_network_knit}}, include = {{summary_network_knit}}}}
+summary_network(configured_data,
+                {{summary_network_style}}, 
+                {{summary_network_label_all}}, 
+                "Network plot of all studies")
+```
+````
+:::
+
+::: {.fragment .fade-in}
+
+````markdown
+### Display the networks for the original data and data with excluded studies.
+
+```{{r, results = 'asis'}}
+summary_network(configured_data, 
+                "netplot", 
+                1, 
+                "Network plot of all studies")
+```
+````
+:::
+
+## Reproducibility also enables improved reporting
+::: columns
+::: {.column width="50%"}
+- Use as the basis for writing a publication
+- Rendered in the app to produce an html report
+:::
+::: {.column style="margin-top: -80px;"}
+<img src = "images/report.png" height = 700px alt = "Screenshot of the an html report produced by the app">
+:::
+:::
+
+## Reproducibility also enables improved reporting
+
+```{r, echo=FALSE, comment=""}
+cat(readLines("quarto_report.qmd"), sep = "\n")
+```
+
+## Reproducibility also enables improved reporting
+
+<iframe width="1400" height="600" src="report.html"></iframe>
+
+## Automated tests give us confidence that everything is working
+
+:::{.incremental .highlight-last}
+- As complexity increases, updating code can have unintended consequences
+- Already a lot of testing in place
+- Now the app is also run and all the buttons pressed on GitHub
+:::
+
+## Analyses can also be saved to a file
+
+:::{.incremental .highlight-last}
+- Can be restored later on
+- Share with colleagues 
+- Access the data / models for further analysis
+- Potential to spin up exact version of app in the future
+:::
+
+## The app can also be run locally {.largecode}
+
+```{r eval = FALSE, echo = TRUE}
+install.packages("metainsight")
+library(metainsight)
+run_metainsight()
+
+run_metainsight(load_file = "saved_file.rds")
+```
+
+## Analyses can also be conducted without the app {.mediumcode}
+
+```{r eval = FALSE, echo = TRUE}
+configured_data <- setup_load("my_data.csv", outcome = "continuous") |>
+  setup_configure(reference_treatment = "Placebo",
+                  effects = "random",
+                  outcome_measure = "MD",
+                  ranking_option = "good",
+                  seed = 123)
+```
+
+::: notes
+- A side product of enabling reproducibility is that the analysis functions work outside of the app
+- Some users may be comfortable with coding, but the NMA packages are not straightforward to use
+:::
+
+## Analyses can also be conducted without the app {.mediumcode}
+
+```{r eval = FALSE, echo = TRUE}
+freq_forest(configured_data) |> 
+  write_plot("frequentist_forest_plot.pdf")
+
+bayes_model(configured_data) |> 
+  bayes_forest() |>
+  write_plot("bayesian_forest_plot.pdf")
+```
+
+- Explained further in vignette
+
+
+## User feedback is important for developing new features
+
+<img src= "images/feature_request.png" width = 1600 alt = "Github screenshot of user making feature request">
+
+- <a href="http://bit.ly/metainsight7" target="_blank">bit.ly/metainsight7</a>
+- <a href="https://github.com/CRSU-Apps/MetaInsight/issues" target="_blank">Open an issue</a> or <a href="mailto: apps@crsu.org.uk" target="_blank">send an email</a>
+
+## Acknowledgments {.mediumtext}
+
+::: columns
+::: {.column width="70%"}
+- Naomi Bradbury, Ryan Field, Tom Morris, Clareece Nevill, Janion Nevill, Alex Sutton, Nicola Cooper, Suzanne Freeman
+- Wellcome (via Chan Zuckerburg Initiative)
+- NIHR
+- <a href="mailto:ss1545@le.ac.uk">Email</a>, <a href="https://github.com/simon-smart88" target="_blank">Github</a>, <a href="https://bsky.app/profile/simonsmart.bsky.social" target="_blank">Bluesky</a>
+:::
+::: {.column width="30%"}
+<div> 
+<img src="images/CRSU_logo.png" width="400" style = "display: block;" alt = "CRSU logo">
+<img src="images/wellcome_logo.png" width="300" class=centre_image alt = "Wellcome logo">
+<img src="images/nihr_logo.png" width="700" style="display: block; position: absolute; right: 0;" alt = "NIHR logo">
+</div>
+:::
+:::
+
