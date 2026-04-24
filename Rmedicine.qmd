@@ -47,27 +47,19 @@ h1.title {
 
 ## Network meta-analysis can help determine the 'best' treatment option
 
+::: columns
+::: {.column width="50%"}
 <img src= "images/network_plot.png" height = 600 alt = "Network of six treatments where there are different numbers of trials that compared each pair" class = centre_image>
-
-::: footer
-Data from Elliot & Meyer (2007) <a href="https://doi.org/10.1016/s0140-6736(07)60108-1" target="_blank">10.1016/s0140-6736(07)60108-1</a>
 :::
-
-## MetaInsight provides frequentist and Bayesian methods
-
-<img src= "images/summary_forest.svg" height = 600 alt = "Summary forest plot summarising frequentist results" class = centre_image>
-
-::: footer
-Data from Doleman *et al.* (2023) <a href="https://doi.org/10.1016/j.bja.2023.02.041" target="_blank">10.1016/j.bja.2023.02.041</a>
-:::
-
-## MetaInsight provides frequentist and Bayesian methods
-
+::: {.column width="50%"}
 <img src= "images/ranking_plot.png" height = 600 alt = "Line graph showing the output of an analysis where each treatment is ranked by outcome" class = centre_image>
+:::
+:::
 
 ::: footer
 Data from Elliot & Meyer (2007) <a href="https://doi.org/10.1016/s0140-6736(07)60108-1" target="_blank">10.1016/s0140-6736(07)60108-1</a> <br/> Plot developed by Nevill *et al.* (2023) <a href="https://doi.org/10.1016/j.jclinepi.2023.02.016" target="_blank">10.1016/j.jclinepi.2023.02.016</a> 
 :::
+
 
 ## Sensitivity analyses can be run in parallel to the main analysis
 
@@ -84,22 +76,7 @@ Data from Elliot & Meyer (2007) <a href="https://doi.org/10.1016/s0140-6736(07)6
 Data from Doleman *et al.* (2023) <a href="https://doi.org/10.1016/j.bja.2023.02.041" target="_blank">10.1016/j.bja.2023.02.041</a>
 :::
 
-## Baseline risk meta-regression considers the initial health of participants
-
-::: columns
-::: {.column width="50%"}
-- Compare reference treatment arms
-:::
-::: {.column width="50%"}
-<img src= "images/baseline_forest.svg" alt = "Forest plot showing the treatment effects after controlling for baseline risk" >
-:::
-:::
-
-::: footer
-Data from Doleman *et al.* (2023) <a href="https://doi.org/10.1016/j.bja.2023.02.041" target="_blank">10.1016/j.bja.2023.02.041</a>
-:::
-
-## Covariate meta-regression evaluates the effect of covariates
+## Meta-regression evaluates the effect of covariates and the initial health of participants
 
 ::: columns
 ::: {.column width="50%"}
@@ -121,7 +98,6 @@ Data from Doleman *et al.* (2023) <a href="https://doi.org/10.1016/j.bja.2023.02
 - JAGS may be hard to install
 - Require data in different formats and use different terminology
 :::
-
 
 
 ## Shiny removes barriers for accessing cutting-edge methods
@@ -236,7 +212,7 @@ ggplot(data = map_data) +
 :::
 
 ::: footer
-Smart *et al.* (2025) <a href="https://doi.org/10.32614/CRAN.package.shinyscholar" target="_blank">10.32614/CRAN.package.shinyscholar</a>
+Smart *et al.* (2025) <a href="https://doi.org/10.32614/CRAN.package.shinyscholar" target="_blank">10.32614/CRAN.package.shinyscholar</a>; <a href="https://simon-smart88.github.io/shinyscholar/" target="_blank">simon-smart88.github.io/shinyscholar</a>
 :::
 
 ## Aims for version 7
@@ -274,21 +250,17 @@ Smart *et al.* (2025) <a href="https://doi.org/10.32614/CRAN.package.shinyschola
 :::
 
 ## Incorporating risk of bias scores improves sensitivity analyses
+::: columns
 ::: {.incremental .highlight-last}
+::: {.column width="50%"}
 - During reviews, risk of bias information can be collected e.g.
   - Randomisation, blinding, missing data
 - Scores can guide sensitivity analyses
 :::
 
-## Risk of data can now be uploaded as part of the dataset
-
-::: columns
-::: {.column width="50%"}
-- Name columns as `rob.<name>` or `rob` and `indirectness`
-- New plot summarises study results and RoB data
-::: 
 ::: {.column width="50%"}
 <img src = "images/summary_study.png" alt = "Forest plot summarising study results and showing risk of bias scores" height = "600px" class = "centre_image">
+:::
 :::
 :::
 
@@ -395,6 +367,17 @@ Papakonstantinou *et al.* (2020) <a href="https://doi.org/10.1002/cl2.1080" targ
 - Enables testing of reproducibility
 :::
 
+::: footer
+
+<a href="" target="_blank">Example function</a>; 
+<a href="https://github.com/CRSU-Apps/MetaInsight/blob/efed9233e1c148c754a8bfefab307ba6cb58f954/R/helper_functions.R#L327" target="_blank">crop_svg</a>; 
+<a href="https://github.com/CRSU-Apps/MetaInsight/blob/efed9233e1c148c754a8bfefab307ba6cb58f954/inst/shiny/www/css/styles.css#L200" target="_blank">CSS</a>; 
+<a href="https://github.com/CRSU-Apps/MetaInsight/blob/efed9233e1c148c754a8bfefab307ba6cb58f954/inst/shiny/ui_helpers.R#L210" target="_blank">Container</a>; 
+<a href="https://github.com/CRSU-Apps/MetaInsight/blob/efed9233e1c148c754a8bfefab307ba6cb58f954/R/helper_functions.R#L177" target="_blank">write_plot</a>; 
+<a href="https://github.com/CRSU-Apps/MetaInsight/blob/efed9233e1c148c754a8bfefab307ba6cb58f954/tests/testthat/test-rep_markdown.R#L197" target="_blank">Example test</a>
+
+:::
+
 ## Reproducibility relies on a strict structure
 
 ::: {.incremental .highlight-last}
@@ -402,6 +385,10 @@ Papakonstantinou *et al.* (2020) <a href="https://doi.org/10.1002/cl2.1080" targ
 - Each calls a synonymous function `summary_network()`
 - Input values are stored in `common$meta$summary_network$<input id>`
 - Values are knitted into an .Rmd chunk and combined to create a .qmd
+:::
+
+::: footer
+Semi-automated by `shinyscholar::metadata()`
 :::
 
 ## Reproducibility relies on a strict structure {.mediumcode}
@@ -448,21 +435,7 @@ summary_network(configured_data,
 
 ## Reproducibility also enables improved reporting
 
-```{r, echo=FALSE, comment=""}
-cat(readLines("quarto_report.qmd"), sep = "\n")
-```
-
-## Reproducibility also enables improved reporting
-
 <iframe width="1400" height="600" src="report.html"></iframe>
-
-## Automated tests give us confidence that everything is working
-
-:::{.incremental .highlight-last}
-- As complexity increases, updating code can have unintended consequences
-- Already a lot of testing in place
-- Now the app is also run and all the buttons pressed on GitHub
-:::
 
 ## Analyses can also be saved to a file
 
