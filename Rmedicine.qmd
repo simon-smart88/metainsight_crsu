@@ -17,7 +17,7 @@ date-format: "Do MMMM YYYY"
 preload-iframes: false
 ---
 
-## Overview of the seminar
+## Overview 
 
 ```{css}
 h1.title {
@@ -28,11 +28,13 @@ h1.title {
   padding: 60px 0;
   color: #00000000;
 }
+
 ```
 
 ::: {.incremental .highlight-last}
 - What is network meta-analysis?
 - History of MetaInsight
+- Aims for v7
 - Demonstration of new features
 - How challenges were addressed
 :::
@@ -51,13 +53,13 @@ h1.title {
 ::: {.column width="50%"}
 <img src= "images/network_plot.png" height = 600 alt = "Network of six treatments where there are different numbers of trials that compared each pair" class = centre_image>
 :::
-::: {.column width="50%"}
+::: {.column width="50%" .fragment .fade-in data-fragment-index="1"}
 <img src= "images/ranking_plot.png" height = 600 alt = "Line graph showing the output of an analysis where each treatment is ranked by outcome" class = centre_image>
 :::
 :::
 
 ::: footer
-Data from Elliot & Meyer (2007) <a href="https://doi.org/10.1016/s0140-6736(07)60108-1" target="_blank">10.1016/s0140-6736(07)60108-1</a> <br/> Plot developed by Nevill *et al.* (2023) <a href="https://doi.org/10.1016/j.jclinepi.2023.02.016" target="_blank">10.1016/j.jclinepi.2023.02.016</a> 
+Data from Elliot & Meyer (2007) <a href="https://doi.org/10.1016/s0140-6736(07)60108-1" target="_blank">10.1016/s0140-6736(07)60108-1</a> <br/> Ranking plot developed by Nevill *et al.* (2023) <a href="https://doi.org/10.1016/j.jclinepi.2023.02.016" target="_blank">10.1016/j.jclinepi.2023.02.016</a> 
 :::
 
 
@@ -98,7 +100,6 @@ Data from Doleman *et al.* (2023) <a href="https://doi.org/10.1016/j.bja.2023.02
 - JAGS may be hard to install
 - Require data in different formats and use different terminology
 :::
-
 
 ## Shiny removes barriers for accessing cutting-edge methods
 
@@ -168,16 +169,12 @@ ggplot(data = map_data) +
 
 ## 
 
-<div style="display: flex; justify-content: center; margin-top: -80px">
+<div style="display: flex; justify-content: center; margin-top: -60px">
   <img src="images/metainsight_existing.png" width = 1400 alt = "Screenshot of the existing app">
 </div>
 
-::: notes
-
-- some options always visible when not needed
-- small graphs
-- download everything as a png would take many clicks
-
+::: footer
+<a href="https://crsu.shinyapps.io/MetaInsight/" target="_blank">crsu.shinyapps.io/MetaInsight</a>
 :::
 
 ## The 'black box' nature of apps can limit uptake
@@ -197,14 +194,13 @@ ggplot(data = map_data) +
 <a href="https://www.nice.org.uk/guidance/ng238" target="_blank">nice.org.uk/guidance/ng238</a>; <a href="https://www.nice.org.uk/guidance/ng238/evidence/network-metaanalysis-of-changes-in-ldl-cholesterol-and-nonhdl-cholesterol-as-a-result-of-escalation-of-lipidlowering-treatment-for-secondary-prevention-of-cvd-pdf-13254044222" target="_blank"> NMA report</a> 
 :::
 
-
 ## shinyscholar was developed to address this
 
 ::: columns
 ::: {.column width="70%"}
-- shinyscholar was forked from wallace to make development of reproducible apps easier
-- Convert core functionality into functions and package
-- App becomes an interface to the functions, dealing with interactivity
+- Forked from wallace to make development of reproducible apps easier
+- Convert into functions and package
+- App becomes interface to functions, dealing with interactivity
 :::
 ::: {.column width="30%"}
 <img src="images/shinyscholar.png" width="auto" height="auto" align="right" alt="Hex logo of shinyscholar showing a black and white mortar cap">
@@ -218,10 +214,10 @@ Smart *et al.* (2025) <a href="https://doi.org/10.32614/CRAN.package.shinyschola
 ## Aims for version 7
 
 :::{.incremental .highlight-last}
-- Make analyses reproducible
 - Upload risk of bias and integrate with CiNeMA
-- Produce a downloadable report
 - Improve quality and consistency of downloaded plots
+- Make analyses reproducible
+- Produce a downloadable report
 - Maintain user experience
 :::
 
@@ -241,26 +237,18 @@ Smart *et al.* (2025) <a href="https://doi.org/10.32614/CRAN.package.shinyschola
 - Opportunities to reuse code within and between modules 
 :::
 
-## Functions manipulate data, modules control when functions are called
-
-:::{.incremental .highlight-last}
-
-- Separates the what from when
-- Functions are easier to test 
-:::
-
 ## Incorporating risk of bias scores improves sensitivity analyses
 ::: columns
-::: {.incremental .highlight-last}
-::: {.column width="50%"}
-- During reviews, risk of bias information can be collected e.g.
-  - Randomisation, blinding, missing data
-- Scores can guide sensitivity analyses
+::: {.column width="50%" .highlight-last}
+<ul>
+  <li class="fragment fade-in" data-fragment-index="1">During reviews, risk of bias information can be collected e.g.</li>
+  <li class="fragment fade-in" data-fragment-index="2">Randomisation, blinding, missing data</li>
+  <li class="fragment fade-in" data-fragment-index="3">Scores can guide sensitivity analyses</li>
+</ul>
 :::
 
-::: {.column width="50%"}
-<img src = "images/summary_study.png" alt = "Forest plot summarising study results and showing risk of bias scores" height = "600px" class = "centre_image">
-:::
+::: {.column .fragment .fade-in width="50%" data-fragment-index="4"}
+<img src = "images/summary_study.png" alt = "Forest plot summarising study results and showing risk of bias scores" height = "700px" class = "centre_image" style = "margin-top: -80px">
 :::
 :::
 
@@ -279,40 +267,28 @@ Smart *et al.* (2025) <a href="https://doi.org/10.32614/CRAN.package.shinyschola
 :::
 
 ::: footer
-<a href="https://cinema.ispm.unibe.ch/" target="_blank">cinema.ispm.unibe.ch</a> ;
+<a href="https://cinema.med.auth.gr/" target="_blank">cinema.med.auth.gr</a>;
 Papakonstantinou *et al.* (2020) <a href="https://doi.org/10.1002/cl2.1080" target="_blank">10.1002/cl2.1080</a> 
 :::
-
-## Uploaded datasets can create difficulties
-
-:::{.incremental .highlight-last}
-- Contain errors which could crash the app
-- Vary in the number of studies and treatments
-- Treatment and study names can vary in length
-:::
-
-## Uploaded datasets can create difficulties
-
-<img src = "images/overloaded_network.png" height = 700px alt = "Screenshot showing existing interface for excluding studies from an analysis" class = "centre_image">
 
 ## Previously studies were excluded by clicking in the sidebar
 
 <img src = "images/metainsight_existing_exclusions.png" height = 700px alt = "Screenshot showing existing interface for excluding studies from an analysis">
 
-## A new graphical interface has been developed to exclude studies
+## A new interface has been developed to exclude studies
 
 - The table has been replaced with the summary forest plot but which is interactive
 - Clicking on a row excludes or includes the study
 
-## Reactivity is a blessing and a curse
+::: footer
 
-:::{.incremental .highlight-last}
-- Reactivity controls when code is rerun
-- As complexity grows, it can be difficult to control and code can rerun unnecessarily
-- Previously Bayesian models had to be rerun when manually when settings changed
+<a href="https://github.com/CRSU-Apps/MetaInsight/blob/7de87908b78d2cc3f20975afc9c8d25c164b79c5/R/setup_exclude_f.R#L86" target="_blank">Function</a>; 
+<a href="https://github.com/CRSU-Apps/MetaInsight/blob/7de87908b78d2cc3f20975afc9c8d25c164b79c5/inst/shiny/www/js/exclusions.js#L1" target="_blank">Javascript</a>;
+<a href="https://github.com/CRSU-Apps/MetaInsight/blob/7de87908b78d2cc3f20975afc9c8d25c164b79c5/inst/shiny/modules/setup_exclude.R#L153" target="_blank">Module</a>
+
 :::
 
-## Slow-running tasks run in the background
+## Slow tasks run in the background
 
 :::{.incremental .highlight-last}
 - Fitting models can block the app for other users
@@ -320,6 +296,30 @@ Papakonstantinou *et al.* (2020) <a href="https://doi.org/10.1002/cl2.1080" targ
 - Can be cancelled
 - Uses `shiny::ExtendedTask()` and `mirai::mirai()`
 :::
+
+::: footer
+<a href="https://github.com/CRSU-Apps/MetaInsight/blob/efed9233e1c148c754a8bfefab307ba6cb58f954/inst/shiny/modules/baseline_model.R#L50" target="_blank">Example module</a>; 
+<a href="https://github.com/CRSU-Apps/MetaInsight/blob/efed9233e1c148c754a8bfefab307ba6cb58f954/inst/shiny/server.R#L43" target="_blank">Loading spinner</a>;
+<a href="https://rstudio.github.io/shiny/reference/ExtendedTask.html" target="_blank">`shiny::ExtendedTask()`</a>;
+<a href="https://mirai.r-lib.org/" target="_blank">`{mirai}`</a>
+:::
+
+## Uploaded datasets can create difficulties
+
+::: columns
+::: {.column width="50%" .highlight-last}
+<ul>
+  <li class="fragment fade-in" data-fragment-index="1">Contain errors which could crash the app</li>
+  <li class="fragment fade-in" data-fragment-index="2">Vary in the number of studies and treatments</li>
+  <li class="fragment fade-in" data-fragment-index="3">Treatment and study names can vary in length</li>
+</ul>
+:::
+
+::: {.column .fragment .fade-in width="50%" data-fragment-index="4"}
+<img src = "images/overloaded_network.png" height = auto alt = "Network plot that is unreadable due to the excessive number of treatments" class = "centre_image">
+:::
+:::
+
 
 ## Producing publication-ready figures
 
@@ -369,11 +369,12 @@ Papakonstantinou *et al.* (2020) <a href="https://doi.org/10.1002/cl2.1080" targ
 
 ::: footer
 
-<a href="" target="_blank">Example function</a>; 
-<a href="https://github.com/CRSU-Apps/MetaInsight/blob/efed9233e1c148c754a8bfefab307ba6cb58f954/R/helper_functions.R#L327" target="_blank">crop_svg</a>; 
+<a href="https://simon-smart88.github.io/forest_plot_blog/forest_blog.html" target="_blank">Interactive blog</a>; 
+<a href="https://github.com/CRSU-Apps/MetaInsight/blob/7de87908b78d2cc3f20975afc9c8d25c164b79c5/R/summary_network_f.R#L1" target="_blank">Example function</a>; 
+<a href="https://github.com/CRSU-Apps/MetaInsight/blob/efed9233e1c148c754a8bfefab307ba6cb58f954/R/helper_functions.R#L327" target="_blank">`crop_svg()`</a>; 
 <a href="https://github.com/CRSU-Apps/MetaInsight/blob/efed9233e1c148c754a8bfefab307ba6cb58f954/inst/shiny/www/css/styles.css#L200" target="_blank">CSS</a>; 
 <a href="https://github.com/CRSU-Apps/MetaInsight/blob/efed9233e1c148c754a8bfefab307ba6cb58f954/inst/shiny/ui_helpers.R#L210" target="_blank">Container</a>; 
-<a href="https://github.com/CRSU-Apps/MetaInsight/blob/efed9233e1c148c754a8bfefab307ba6cb58f954/R/helper_functions.R#L177" target="_blank">write_plot</a>; 
+<a href="https://github.com/CRSU-Apps/MetaInsight/blob/efed9233e1c148c754a8bfefab307ba6cb58f954/R/helper_functions.R#L177" target="_blank">`write_plot()`</a>; 
 <a href="https://github.com/CRSU-Apps/MetaInsight/blob/efed9233e1c148c754a8bfefab307ba6cb58f954/tests/testthat/test-rep_markdown.R#L197" target="_blank">Example test</a>
 
 :::
@@ -388,7 +389,9 @@ Papakonstantinou *et al.* (2020) <a href="https://doi.org/10.1002/cl2.1080" targ
 :::
 
 ::: footer
-Semi-automated by `shinyscholar::metadata()`
+
+Semi-automated by <a href="https://simon-smart88.github.io/shinyscholar/reference/metadata.html" target="_blank">`shinyscholar::metadata()`</a>
+
 :::
 
 ## Reproducibility relies on a strict structure {.mediumcode}
@@ -397,7 +400,6 @@ Semi-automated by `shinyscholar::metadata()`
 ````markdown
 ```{{asis, echo = {{summary_network_knit}}, eval = {{summary_network_knit}}, include = {{summary_network_knit}}}}
 ### Display the networks for the original data and data with excluded studies.
-{r,  results = 'asis'}
 ```
 ```{{r, echo = {{summary_network_knit}}, include = {{summary_network_knit}}}}
 summary_network(configured_data,
@@ -413,7 +415,7 @@ summary_network(configured_data,
 ````markdown
 ### Display the networks for the original data and data with excluded studies.
 
-```{{r, results = 'asis'}}
+```{{r}}
 summary_network(configured_data, 
                 "netplot", 
                 1, 
@@ -433,9 +435,9 @@ summary_network(configured_data,
 :::
 :::
 
-## Reproducibility also enables improved reporting
-
-<iframe width="1400" height="600" src="report.html"></iframe>
+::: footer
+<a href="https://github.com/CRSU-Apps/MetaInsight/blob/efed9233e1c148c754a8bfefab307ba6cb58f954/inst/shiny/modules/rep_markdown.R" target="_blank">`rep_markdown` module</a>
+:::
 
 ## Analyses can also be saved to a file
 
@@ -445,6 +447,12 @@ summary_network(configured_data,
 - Access the data / models for further analysis
 - Potential to spin up exact version of app in the future
 :::
+
+::: footer
+<a href="https://github.com/CRSU-Apps/MetaInsight/blob/efed9233e1c148c754a8bfefab307ba6cb58f954/inst/shiny/modules/core_save.R" target="_blank">Saving</a>; 
+<a href="https://github.com/CRSU-Apps/MetaInsight/blob/efed9233e1c148c754a8bfefab307ba6cb58f954/inst/shiny/modules/setup_reload.R" target="_blank">Reloading</a>; automated by <a href="https://simon-smart88.github.io/shinyscholar/reference/save_and_load.html" target="_blank">`shinyscholar::save_and_load()`</a>
+:::
+
 
 ## The app can also be run locally {.largecode}
 
@@ -467,11 +475,6 @@ configured_data <- setup_load("my_data.csv", outcome = "continuous") |>
                   seed = 123)
 ```
 
-::: notes
-- A side product of enabling reproducibility is that the analysis functions work outside of the app
-- Some users may be comfortable with coding, but the NMA packages are not straightforward to use
-:::
-
 ## Analyses can also be conducted without the app {.mediumcode}
 
 ```{r eval = FALSE, echo = TRUE}
@@ -485,12 +488,11 @@ bayes_model(configured_data) |>
 
 - Explained further in vignette
 
-
 ## User feedback is important for developing new features
 
 <img src= "images/feature_request.png" width = 1600 alt = "Github screenshot of user making feature request">
 
-- <a href="http://bit.ly/metainsight7" target="_blank">bit.ly/metainsight7</a>
+- <a href="https://crsu.shinyapps.io/MetaInsight_Scholar/" target="_blank">crsu.shinyapps.io/MetaInsight_Scholar</a>
 - <a href="https://github.com/CRSU-Apps/MetaInsight/issues" target="_blank">Open an issue</a> or <a href="mailto: apps@crsu.org.uk" target="_blank">send an email</a>
 
 ## Acknowledgments {.mediumtext}
